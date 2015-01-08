@@ -1,0 +1,25 @@
+CusAnaly			定制分析
+PerCoefficient		人均系数
+PerSpend			人员支出
+PubSpend			公用支出
+ProSpend			项目支出
+AnnIncomAnaly		年度收入分析
+AnnSpendAnaly		年度支出分析
+MonIncomAnaly		月度收入分析
+MonSpendAnaly		月度支出分析
+FixAssets			固定资产
+
+
+
+
+OptAnaly			自选分析
+AnnIncomAnaly		年度收入分析
+AnnSpendAnaly		年度支出分析
+MonIncomAnaly		月度收入分析
+MonSpendAnaly		月度支出分析
+
+
+InfoPublic          信息公开
+InfoPubDetail		信息公开详细
+InfoPubChart		信息公开图表
+InfoPubStat			信息公开统计

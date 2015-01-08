@@ -1,0 +1,39 @@
+﻿页面说明
+
+
+系统设置
+单位基本信息         UnitBaseInfoSetting.aspx
+账套/科目对应信息    ZTSubCorrespondInfoSetting.aspx
+人员角色分配         PerRoleAllocateSetting.aspx
+预警控制指标         WarnControlIndexSetting.aspx
+
+账表查询
+总账查询             LedgerInquiry.aspx
+明细账查询           BreakdownInquiry.aspx
+余额表查询           BalanceTableInquiry.aspx
+报表查询             ReportInquiry.aspx
+
+自选分析
+基层单位日常公用支出明细表   GrassrootUnitDayPubSpendScheduleAnaly.aspx
+经费预算指标                 BudgetTargetAnaly.aspx
+经费支出对比分析表           FundExpendContrastAnalyTB.aspx
+综合评估分析表               ComplexAssessAnalyTB.aspx
+
+公务经费支出评估表           PubFundExpendEvaForm.aspx
+资产负债评估表               BalanceEvaForm.aspx
+经费收入评估表               FundIncEvaForm.aspx 
+经费预算执行情况表           FundBudExecutionTb.aspx
+
+数据分析
+经费自给率分析            FundOwnRateAnaly.aspx    
+人员支出事业比分析        PerExpenCareRatioAnaly.aspx
+公用支出事业比分析        PubExpenCareRatioAnaly.aspx
+资产负债率分析            BalanceRateAnaly.aspx
+预算完成率分析            BudgetCompleteRateAnaly.aspx
+事业支出情况分析          CareExpenSituaAnaly.aspx
+三公经费支出情况分析表    ThreeFundExpenAnalyTable.aspx
+自定义项目分析            CustomProAnaly.aspx
+
+
+
+PUCIssNumTb

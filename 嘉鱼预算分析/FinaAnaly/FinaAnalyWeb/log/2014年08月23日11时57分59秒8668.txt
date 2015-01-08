@@ -1,0 +1,1 @@
+FA_FundsAccountJournalService.GetFundsAccountJournalByName:对象名 'FundsAccountJournal' 无效。

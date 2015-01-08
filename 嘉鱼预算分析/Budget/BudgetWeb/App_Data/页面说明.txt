@@ -1,0 +1,45 @@
+﻿页面名称对应说明
+
+
+【Root】
+
+Default.aspx	框架页面
+
+
+【WebPage】
+
+//------------------BudgetAnalyse----------预算分析页面----------------
+
+BAOperationDoc.aspx						操作说明
+
+//------------------BudgetControl----------预算控制页面----------------
+
+BCOperationDoc.aspx						操作说明
+
+//------------------BudgetEdit----------预算编辑页面----------------
+
+EBNavigate.aspx							导航
+BEOperationDoc.aspx						操作说明
+BEBudgetSubject.aspx					预算科目
+BEPersonExpenseBudget.aspx				人员经费预算
+BEPublicExpenseBudget.aspx				公用经费预算
+BEProjectExpenseBudget.aspx				项目经费预算
+
+//------------------BudgetExecute----------预算执行页面----------------
+
+BXOperationDoc.aspx						操作说明
+
+
+//------------------Policy----------政策指导页面----------------
+
+PLNavigate.aspx							导航
+PLOperationDoc.aspx						操作说明
+PolicyContent.aspx						弹窗-政策内容页
+PolicyList.aspx							主窗体-右侧列表页
+
+
+//------------------Setting----------基本设置页面----------------
+
+STNavigate.aspx							导航
+STOperationDoc.aspx						操作说明
+

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BudgetWeb", "BudgetWeb", "{935F265A-6B8C-4D73-B0A4-1C9BC09FC5E5}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""
+		SccAuxPath = ""
+		SccLocalPath = ""
+		SccProvider = ""
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{296bf330-0342-4d0f-b620-5b735696da0d}|Budget.DataAccess.dll;{f18ff7c9-0fd5-4cf5-8250-44f3a64135c6}|BudgetSys.Common.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/BudgetWeb"
+		Debug.AspNetCompiler.PhysicalPath = "BudgetWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\BudgetWeb\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/BudgetWeb"
+		Release.AspNetCompiler.PhysicalPath = "BudgetWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\BudgetWeb\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3313"
+		VWDDynamicPort = "true"
+		VWDVirtualPath = "/"
+		StartServerOnDebug = "true"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budget.DataAccess", "Budget.DataAccess\Budget.DataAccess.csproj", "{296BF330-0342-4D0F-B620-5B735696DA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Budget.Common\Common.csproj", "{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{935F265A-6B8C-4D73-B0A4-1C9BC09FC5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935F265A-6B8C-4D73-B0A4-1C9BC09FC5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935F265A-6B8C-4D73-B0A4-1C9BC09FC5E5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{935F265A-6B8C-4D73-B0A4-1C9BC09FC5E5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{296BF330-0342-4D0F-B620-5B735696DA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296BF330-0342-4D0F-B620-5B735696DA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296BF330-0342-4D0F-B620-5B735696DA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296BF330-0342-4D0F-B620-5B735696DA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

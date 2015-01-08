@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<members>
+  <Person>
+    <uid>设置</uid>
+    <uname>祝朝辉</uname>
+    <setting>财政拨款,其他资金*基本支出，项目支出*工资福利支出,商品和服务支出,对个人和家庭补助支出,其他资本性支出</setting>
+    <time>2014年08月12日 16:53:20</time>
+  </Person>
+  <Person>
+    <uid>设置</uid>
+    <uname>余显忠</uname>
+    <setting>财政拨款,其他资金*基本支出，项目支出*工资福利支出,商品和服务支出,对个人和家庭补助支出,其他资本性支出</setting>
+    <time>2014年08月12日 16:57:55</time>
+  </Person>
+</members>

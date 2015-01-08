@@ -1,0 +1,74 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Common;
+using BudgetWeb.BLL;
+using Ext.Net;
+
+public partial class WebPage_BudgetEdit_ImportFinaData : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            ddlDataBind(AreaDepID);
+        }
+    }
+
+    [DirectMethod]
+    public void DelFinaData(int id)
+    {
+        
+    }
+    private void ddlDataBind(int depid)
+    {
+        DataTable dt = new DataTable();
+        dt.Columns.Add("ID");
+        dt.Columns.Add("TbName");
+        dt.Columns.Add("TbNo");
+        dt.Columns.Add("Year");
+        dt.Columns.Add("Status");
+        DataTable dtDPB = BGDayPubBudgetManager.GetBGDayPubBudgetByDepID(depid);
+        DataTable dtWSM = BGPayWelSupplyManager.GetBGPayWelSupplyByDepID(depid);
+        DataTable dtWEM = BGPayWelExpenManager.GetBGPayExpByDepID(depid);
+        if (dtDPB.Rows.Count > 0 || dtWSM.Rows.Count > 0 || dtWEM.Rows.Count > 0)
+        {
+            for (int i = 0; i < dtDPB.Rows.Count; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["ID"] = dtDPB.Rows[i]["DPBID"].ToString();
+                dr["TbName"] = "日常公用支出预算表";
+                dr["TbNo"] = "BGDayPubBudget";
+                dr["Year"] = dtDPB.Rows[i]["DPBYear"].ToString();
+                dr["Status"] = "正常";
+                dt.Rows.Add(dr);
+            }
+            for (int j = 0; j < dtWSM.Rows.Count; j++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["ID"] = dtWSM.Rows[j]["GSEID"].ToString();
+                dr["TbName"] = "对个人和家庭的补助支出表";
+                dr["TbNo"] = "BGPayWelSupply";
+                dr["Year"] = dtWSM.Rows[j]["GSEYear"].ToString();
+                dr["Status"] = "正常";
+                dt.Rows.Add(dr);
+            }
+            for (int k = 0; k < dtWEM.Rows.Count; k++)
+            {
+                DataRow dr = dt.NewRow();
+                dr["ID"] = dtWEM.Rows[k]["PWEID"].ToString();
+                dr["TbName"] = "工资福利支出表";
+                dr["TbNo"] = "BGPayExp";
+                dr["Year"] = dtWEM.Rows[k]["PWEYear"].ToString();
+                dr["Status"] = "正常";
+                dt.Rows.Add(dr);
+            }
+        }
+        stBudget.DataSource = dt;
+        stBudget.DataBind();
+    }
+}

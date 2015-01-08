@@ -1,0 +1,491 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    margin: 0px;
+    font-size: 12px;
+    background-color: #FFF;
+}
+
+.urlsrc {
+    height: 17px;
+    width: 100%;
+    line-height: 17px;
+}
+
+    .urlsrc span, .tabtitle span, .scrolpage span {
+        display: block;
+        float: left;
+    }
+
+    .urlsrc span {
+    }
+
+    .urlsrc p, .tabtitle p, .scrolpage p {
+        display: block;
+    }
+
+    .urlsrc p {
+        float: right;
+        position: fixed;
+        right: 0;
+    }
+
+.btn1 {
+    height: 20px;
+    line-height: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: #A8C7CE solid 1px;
+    margin: 11px;
+}
+
+    .btn1 a, .btns {
+        display: block;
+        float: right;
+        color: #003B4C;
+        text-decoration: none;
+        background: url('../images/btnbg.jpg') repeat-x left top;
+        height: 20px;
+        line-height: 20px;
+        border: #8DC4D4 solid 1px;
+        padding: 0 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 0;
+    }
+
+.btns {
+    float: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.btns1 {
+    background: url(../images/btnbg1.jpg) top left repeat-x;
+    border-color: #DFBE8E;
+}
+
+.btns2 {
+    background: url(../images/btnbg2.jpg) top left repeat-x;
+    border-color: #C9DE99;
+}
+
+.btns3 {
+    background: none;
+    background-color: #F30;
+}
+
+.btns4 {
+    background: none;
+}
+
+.tabtitle, .scrolpage {
+    clear: both;
+    height: 26px;
+    line-height: 26px;
+    margin: auto 11px;
+}
+
+.tabtable {
+    margin: auto 11px;
+}
+
+.tabtitle span {
+    margin-left: 10px;
+    _margin-left: 8px;
+    background: url('../images/tb.gif') no-repeat left top;
+    text-indent: 23px;
+    width: 364px;
+}
+
+.scrolpage span {
+    text-indent: 18px;
+}
+
+.tabtitle p, .scrolpage p {
+    margin-right: 15px;
+}
+
+    .tabtitle p a, .scrolpage p a {
+        color: #FFF;
+        text-decoration: none;
+        margin: 0 6px;
+    }
+
+.noimg {
+    filter: Alpha(opacity=40);
+    -moz-opacity: .4;
+    opacity: 0.4;
+}
+
+.tabtitle {
+    background-color: #353C44;
+    color: #FFF;
+    margin-top: 3px;
+}
+
+.tablebt {
+    text-align: center;
+    background-color: #d3eaef;
+    height: 20px;
+}
+
+.tabletext {
+    text-align: center;
+    background-color: #FFF;
+    height: 20px;
+    color: #344b50;
+}
+
+.scrolpage p input {
+    width: 20px;
+    height: 12px;
+    font-size: 12px;
+    border: solid 1px #7aaebd;
+}
+
+.scrolpage {
+    margin-top: 6px;
+    clear: both;
+}
+
+.red {
+    color: #F00;
+    margin: 0 3px;
+}
+
+/* otherpages */
+table font, table h3 {
+    color: #f00;
+    font-size: 12px;
+}
+
+.zcenter {
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+
+.table_list table, .table_list table td, .table_list table, .table_list table th {
+    border: 1px solid #A8C7CE;
+    border-collapse: collapse;
+    height: 26px;
+    padding-left: 10px;
+}
+
+.tr1 {
+    background-color: #D9E7F8;
+    font-size: 13.3px;
+}
+
+.right {
+    text-align: right;
+    padding-right: 8px;
+}
+
+.table tr td input {
+    vertical-align: middle;
+}
+
+.table_list tr td.height50 {
+    height: 50px;
+}
+
+.table_list .back {
+    background: url(../images/back.gif) repeat-x;
+    height: 31px;
+    line-height: 31px;
+}
+
+    .table_list .back a {
+        color: #000;
+        text-decoration: none;
+        display: block;
+        float: left;
+    }
+
+        .table_list .back a:hover {
+            color: #467300;
+        }
+
+.table_list a.back1 {
+    background: url(../images/back1.gif) no-repeat;
+    width: 40px;
+    padding-left: 35px;
+}
+
+/*表单*/
+.table_list {
+    margin:10px auto;   
+    height: auto;
+    background: #fff;
+    border: 0px solid #8493b2;
+    min-width: 760px;
+    width: expression(document.body.clientWidth < 760? "760px": "100%" ) /*最小宽度设置*/;
+    width: 100%;
+}
+
+    .table_list table {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+        .table_list table tr th {
+            height: 30px;
+            line-height: 30px;
+            font-weight: normal;
+            font-size: 13.3px;
+            color: #000;
+            font-weight: bold;
+            background: url(../images/thbac.jpg) repeat-x;
+            background-position: left top;
+            letter-spacing: 2px;
+        }
+
+.tabadd {
+    height: 150px;
+    overflow-y: auto;
+    width: 500px;
+    margin: 5px 0;
+}
+
+    .tabadd ul {
+        margin-top: 5px;
+    }
+
+    .tabadd input {
+        vertical-align: middle;
+    }
+
+    .tabadd ul li {
+        width: 100px;
+        padding-right: 20px;
+        display: block;
+        float: left;
+        margin: 3px 0;
+    }
+
+.table_list .lefttab, .table_list .rightab {
+    float: left;
+    width: 49.6%;
+}
+
+.table_list .lefttab2, .table_list .rightab2 {
+    float: left;
+    width: 40%;
+}
+
+.table_list .lefttab3 {
+    float: left;
+    width: 26%;
+}
+
+.table_list .rightab3 {
+    float: left;
+    width: 48%;
+}
+
+.table_list .centertab, .table_list .centertab2 {
+    float: left;
+    width: 100px;
+    text-align: center;
+    padding-top: 90px;
+}
+
+.table_list .centertab2 {
+    width: 26%;
+    padding-top: 0;
+}
+
+.moren {
+    text-align: center;
+    background: url(../images/moren_bg.jpg) top left repeat-x;
+    height: 100%;
+}
+
+.zhuowei {
+    margin-right: 10px;
+    padding: 0;
+}
+
+    .zhuowei table tr {
+        height: 60px;
+    }
+
+        .zhuowei table tr td.zt1 {
+            background-color: #FAF4C9;
+        }
+
+        .zhuowei table tr td.zt2 {
+            background-color: #EEFDD5;
+        }
+
+        .zhuowei table tr td.zt3 {
+            background-color: #F30;
+        }
+
+
+.numbig {
+    font-size: 23.5pt;
+    font-weight: bold;
+    height: 45.5px;
+    line-height: 45.5px;
+}
+
+.numbig1 {
+    color: #F00;
+}
+
+.numbig2 {
+}
+
+.numbig3 {
+}
+
+.table_list02 {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+    .table_list02 table, .table_list02 table td, .table_list02 table, .table_list02 table th {
+        border: 1px solid #c0c0c0;
+        border-collapse: collapse;
+    }
+
+        .table_list02 table tr th {
+            height: 25px;
+            line-height: 25px;
+            font-weight: bold;
+            background: url(../images/th02bac.jpg) repeat-x;
+            background-position: left bottom;
+            letter-spacing: 2px;
+        }
+
+    .table_list02 table {
+        background-color: #fff;
+    }
+
+.button1, .button2, .button3, .button4, .button5, .button6, .button7, .button8 {
+    width: 85px;
+    height: 25px;
+    border: none;
+    background: url(../images/button.gif) no-repeat;
+    margin: 5px 2px 5px 0;
+    line-height: 27px;
+}
+
+.button2 {
+    width: 80px;
+    background: url(../images/button2.gif) repeat-x;
+    color: #FFF;
+}
+
+.button3 {
+    background: url(../images/button3.gif) no-repeat;
+}
+
+.button4 {
+    background: url(../images/button4.gif) no-repeat;
+    color: #FFF;
+}
+
+.button5 {
+    background: url(../images/button5.gif) no-repeat;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0;
+}
+
+.button6, .button7, .button8 {
+    background: url(../images/button6.gif) no-repeat;
+    text-align: right;
+    padding-right: 8px;
+}
+
+.button7 {
+    background: url(../images/button7.gif) no-repeat;
+}
+
+.button8 {
+    background: url(../images/button8.gif) no-repeat;
+}
+
+.button9 {
+    width: 100px;
+    height: 24px;
+    line-height: 22px;
+}
+
+/*翻页样式*/
+.tabpage tr td {
+    text-align: center;
+    padding: 3px 0;
+}
+
+    .tabpage tr td input {
+        vertical-align: middle;
+    }
+
+    .tabpage tr td a {
+        color: #000;
+        text-decoration: none;
+        padding-right: 5px;
+    }
+
+        .tabpage tr td a:hover {
+            color: #F00;
+        }
+
+.go_h, .go {
+    width: 26px;
+    height: 20px;
+    border: none;
+    background: url(../images/go_h.gif) no-repeat;
+    cursor: pointer;
+}
+
+.lnext_h, .lnext1_h, .rnext_h, .rnext1_h, .lnext, .lnext1, .lnext1, .rnext, .rnext1 {
+    width: 25px;
+    height: 20px;
+    border: none;
+    background: url(../images/lnext_h.gif) no-repeat;
+    cursor: pointer;
+}
+
+.lnext1_h {
+    background: url(../images/lnext1_h.gif) no-repeat;
+}
+
+.rnext_h {
+    background: url(../images/rnext_h.gif) no-repeat;
+}
+
+.rnext1_h {
+    background: url(../images/rnext1_h.gif) no-repeat;
+}
+
+.go {
+    background: url(../images/go.gif) no-repeat;
+}
+
+.lnext, .lnext1, .lnext1, .rnext, .rnext1 {
+    background: url(../images/lnext.gif) no-repeat;
+}
+
+.lnext1 {
+    background: url(../images/lnext1.gif) no-repeat;
+}
+
+.rnext {
+    background: url(../images/rnext.gif) no-repeat;
+}
+
+.rnext1 {
+    background: url(../images/rnext1.gif) no-repeat;
+}
+
+.tr2 {
+    text-align: center;
+}

@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{296BF330-0342-4D0F-B620-5B735696DA0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Budget.DataAccess</RootNamespace>
+    <AssemblyName>Budget.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\ExcelRender.cs" />
+    <Compile Include="App_Code\SqlHelper.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ApplyReimburManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudAppendixManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudControlManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudCostProManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudgetAllocationManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudgetConCellManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudgetConManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudItemHisManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudItemsLibrariesManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_BudItemsManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_DataRecordManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_DayPubBudgetManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_DepartmentManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_EcoIncomeManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_EstimatesAllocationManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_FixAssetPurchaseManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_FixedAssetsManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_IncomeAnaManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_IncomeCKManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_IncomeGatherManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_MonPayPlanAManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_MonPayPlanManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_MonPayPlanRemarkManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_OutlayAnaManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_OutlayCKManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_OutLayGatherManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PayIncomeManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PayProjectManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PayWelExpenManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PayWelSupplyManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PolicyManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PreManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PreviewDataManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PreviewDevideManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PreviewStructManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_PrjJonSubManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ProBasiPerPayOneManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ProBasiPerPayTwoManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ProBasiPubPayManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ProPayManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ProvBudItemsManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_QuotaManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ReimAppendixManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_ReimDocumentsManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_SupplementaryManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_SysSettingManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_UserManager.cs" />
+    <Compile Include="AutoCreate\BLL\BG_UserPurviewManager.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ApplyReimburService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudAppendixService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudControlService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudCostProService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudgetAllocationService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudgetConCellService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudgetConService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudItemHisService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudItemsLibrariesService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_BudItemsService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_DataRecordService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_DayPubBudgetService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_DepartmentService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_EcoIncomeService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_FixAssetPurchaseService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_FixedAssetsService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_IncomeAnaService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_IncomeCKService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_IncomeGatherService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_MonPayPlanAService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_MonPayPlanRemarkService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_MonPayPlanService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_OutlayAnaService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_OutlayCKService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_OutLayGatherService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PayIncomeService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PayProjectService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PayWelExpenService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PayWelSupplyService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PolicyService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PreService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PreviewDataService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PreviewDevideService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PreviewStructService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_PrjJonSubService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ProBasiPerPayOneService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ProBasiPerPayTwoService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ProBasiPubPayService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ProPayService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ProvBudItemsService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_QuotaService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ReimAppendixService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_ReimDocumentsService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_SupplementaryService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_SysSettingService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_UserPurviewService.cs" />
+    <Compile Include="AutoCreate\DAL\BG_UserService.cs" />
+    <Compile Include="AutoCreate\DAL\DBUnity.cs" />
+    <Compile Include="AutoCreate\DAL\BG_EstimatesAllocationService.cs" />
+    <Compile Include="AutoCreate\Model\BG_ApplyReimbur.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudAppendix.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudControl.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudCostPro.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudgetAllocation.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudgetCon.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudgetConCell.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudItemHis.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudItems.cs" />
+    <Compile Include="AutoCreate\Model\BG_BudItemsLibraries.cs" />
+    <Compile Include="AutoCreate\Model\BG_DataRecord.cs" />
+    <Compile Include="AutoCreate\Model\BG_DayPubBudget.cs" />
+    <Compile Include="AutoCreate\Model\BG_Department.cs" />
+    <Compile Include="AutoCreate\Model\BG_EcoIncome.cs" />
+    <Compile Include="AutoCreate\Model\BG_FixAssetPurchase.cs" />
+    <Compile Include="AutoCreate\Model\BG_FixedAssets.cs" />
+    <Compile Include="AutoCreate\Model\BG_IncomeAna.cs" />
+    <Compile Include="AutoCreate\Model\BG_IncomeCK.cs" />
+    <Compile Include="AutoCreate\Model\BG_IncomeGather.cs" />
+    <Compile Include="AutoCreate\Model\BG_MonPayPlan.cs" />
+    <Compile Include="AutoCreate\Model\BG_MonPayPlanA.cs" />
+    <Compile Include="AutoCreate\Model\BG_MonPayPlanRemark.cs" />
+    <Compile Include="AutoCreate\Model\BG_OutlayAna.cs" />
+    <Compile Include="AutoCreate\Model\BG_OutlayCK.cs" />
+    <Compile Include="AutoCreate\Model\BG_OutLayGather.cs" />
+    <Compile Include="AutoCreate\Model\BG_PayIncome.cs" />
+    <Compile Include="AutoCreate\Model\BG_PayProject.cs" />
+    <Compile Include="AutoCreate\Model\BG_PayWelExpen.cs" />
+    <Compile Include="AutoCreate\Model\BG_PayWelSupply.cs" />
+    <Compile Include="AutoCreate\Model\BG_Policy.cs" />
+    <Compile Include="AutoCreate\Model\BG_Pre.cs" />
+    <Compile Include="AutoCreate\Model\BG_PreviewData.cs" />
+    <Compile Include="AutoCreate\Model\BG_PreviewDevide.cs" />
+    <Compile Include="AutoCreate\Model\BG_PreviewStruct.cs" />
+    <Compile Include="AutoCreate\Model\BG_PrjJonSub.cs" />
+    <Compile Include="AutoCreate\Model\BG_ProBasiPerPayOne.cs" />
+    <Compile Include="AutoCreate\Model\BG_ProBasiPerPayTwo.cs" />
+    <Compile Include="AutoCreate\Model\BG_ProBasiPubPay.cs" />
+    <Compile Include="AutoCreate\Model\BG_ProPay.cs" />
+    <Compile Include="AutoCreate\Model\BG_ProvBudItems.cs" />
+    <Compile Include="AutoCreate\Model\BG_Quota.cs" />
+    <Compile Include="AutoCreate\Model\BG_ReimAppendix.cs" />
+    <Compile Include="AutoCreate\Model\BG_ReimDocuments.cs" />
+    <Compile Include="AutoCreate\Model\BG_Supplementary.cs" />
+    <Compile Include="AutoCreate\Model\BG_SysSetting.cs" />
+    <Compile Include="AutoCreate\Model\BG_User.cs" />
+    <Compile Include="AutoCreate\Model\BG_UserPurview.cs" />
+    <Compile Include="AutoCreate\Model\BG_EstimatesAllocation.cs" />
+    <Compile Include="Core\BGBudItemHisLogic.cs" />
+    <Compile Include="Core\BGBudItemsLibrariesLogic.cs" />
+    <Compile Include="Core\BGBudItemsLogic.cs" />
+    <Compile Include="Core\BG_ApplyReimburLogic.cs" />
+    <Compile Include="Core\BG_BudgetAllocationLogic.cs" />
+    <Compile Include="Core\BG_BudItemsLogic.cs" />
+    <Compile Include="Core\BG_DepartmentLogic.cs" />
+    <Compile Include="Core\BG_EcoIncomeLogic.cs" />
+    <Compile Include="Core\BG_EstimatesAllocationLogic.cs" />
+    <Compile Include="Core\BG_IncomeCKLogic.cs" />
+    <Compile Include="Core\BG_MonPayPlanGenerateLogic.cs" />
+    <Compile Include="Core\BG_MonPayPlanLogic.cs" />
+    <Compile Include="Core\BG_MonPayPlanRemarkLogic.cs" />
+    <Compile Include="Core\BG_OutlayAnaLogic.cs" />
+    <Compile Include="Core\BG_IncomeAnaLogic.cs" />
+    <Compile Include="Core\BG_OutlayCKLogic.cs" />
+    <Compile Include="Core\BG_PayIncomeLogic.cs" />
+    <Compile Include="Core\BG_PolicyLogic.cs" />
+    <Compile Include="Core\BG_PreLogic.cs" />
+    <Compile Include="Core\BG_PreviewData.cs" />
+    <Compile Include="Core\BG_PreviewDevideLogic.cs" />
+    <Compile Include="Core\BG_PreviewStructLogic.cs" />
+    <Compile Include="Core\BG_ProBasiPerPayOneLogic.cs" />
+    <Compile Include="Core\BG_QuotaLogic.cs" />
+    <Compile Include="Core\BG_SysSettingLogic.cs" />
+    <Compile Include="Core\BG_UserLogic.cs" />
+    <Compile Include="Core\BG_SelMonPayPlanLogic.cs" />
+    <Compile Include="Core\BG_ChaSecAuditLogic.cs" />
+    <Compile Include="Core\ImportFinaDataLogic.cs" />
+    <Compile Include="Core\BG_SupplementaryLogic.cs" />
+    <Compile Include="Core\BGQuotaLogic.cs" />
+    <Compile Include="CustomLogic\BLL\BGApplyReimburManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudAppendixManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudCostProManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudgetConCellManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudgetConManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudItemHisManage.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudItemsLibrariesManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGBudItemsManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGDayPubBudgetManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGDepartmentManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGFixAssetPurchaseManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGMonPayPlanRemarkManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGPayIncomeManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGPayProjectManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGPayWelExpenManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGPayWelSupplyManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGProvBudItemsManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGReimAppendixManager.cs" />
+    <Compile Include="CustomLogic\BLL\BGReimDocumentsManager.cs" />
+    <Compile Include="CustomLogic\BLL\VApplyPayDepartManager.cs" />
+    <Compile Include="CustomLogic\BLL\VMonPayPlanIncomeManager.cs" />
+    <Compile Include="CustomLogic\DAL\BGApplyReimburService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudAppendixService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudCostProService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudgetConCellService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudgetConService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudItemHisService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudItemsLibrariesService.cs" />
+    <Compile Include="CustomLogic\DAL\BGBudItemsService.cs" />
+    <Compile Include="CustomLogic\DAL\BGDayPubBudgetService.cs" />
+    <Compile Include="CustomLogic\DAL\BGDepartmentService.cs" />
+    <Compile Include="CustomLogic\DAL\BGFixAssetPurchaseService.cs" />
+    <Compile Include="CustomLogic\DAL\BGMonPayPlanRemarkService.cs" />
+    <Compile Include="CustomLogic\DAL\BGPayIncomeService.cs" />
+    <Compile Include="CustomLogic\DAL\BGPayProjectService.cs" />
+    <Compile Include="CustomLogic\DAL\BGPayWelExpenService.cs" />
+    <Compile Include="CustomLogic\DAL\BGPayWelSupplyService.cs" />
+    <Compile Include="CustomLogic\DAL\BGPreviewDevideLogic.cs" />
+    <Compile Include="CustomLogic\DAL\BGProvBudItemsService.cs" />
+    <Compile Include="CustomLogic\DAL\BGReimAppendixService.cs" />
+    <Compile Include="CustomLogic\DAL\BGReimDocumentsService.cs" />
+    <Compile Include="CustomLogic\DAL\VApplyPayDepartService.cs" />
+    <Compile Include="CustomLogic\DAL\VMonPayPlanIncomeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Budget.Common\Common.csproj">
+      <Project>{f18ff7c9-0fd5-4cf5-8250-44f3a64135c6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BG_FinAuditLogic.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

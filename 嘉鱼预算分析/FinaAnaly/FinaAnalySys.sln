@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FinaAnalyWeb", "http://localhost:21190", "{BC81F9EA-A449-4F5D-849C-2C846BBD8118}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{82db47b6-86e6-43bc-862f-7b0e9765e503}|FinaAnaly.BLL.dll;{75c9b478-82dc-41e0-b40e-d0be048f9602}|FinaAnaly.Common.dll;{0968bac2-a7a6-4e70-aedc-f15d6a1a37bb}|FinaAnaly.Model.dll;{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}|FinaAnaly.DAL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_21190"
+		Debug.AspNetCompiler.PhysicalPath = "FinaAnalyWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_21190\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_21190"
+		Release.AspNetCompiler.PhysicalPath = "FinaAnalyWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_21190\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "FinaAnalyWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinaAnaly.Common", "FinaAnaly.Common\FinaAnaly.Common.csproj", "{75C9B478-82DC-41E0-B40E-D0BE048F9602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinaAnaly.Model", "FinaAnaly.Model\FinaAnaly.Model.csproj", "{0968BAC2-A7A6-4E70-AEDC-F15D6A1A37BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinaAnaly.DAL", "FinaAnaly.DAL\FinaAnaly.DAL.csproj", "{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinaAnaly.BLL", "FinaAnaly.BLL\FinaAnaly.BLL.csproj", "{82DB47B6-86E6-43BC-862F-7B0E9765E503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC81F9EA-A449-4F5D-849C-2C846BBD8118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC81F9EA-A449-4F5D-849C-2C846BBD8118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC81F9EA-A449-4F5D-849C-2C846BBD8118}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC81F9EA-A449-4F5D-849C-2C846BBD8118}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{75C9B478-82DC-41E0-B40E-D0BE048F9602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C9B478-82DC-41E0-B40E-D0BE048F9602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C9B478-82DC-41E0-B40E-D0BE048F9602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C9B478-82DC-41E0-B40E-D0BE048F9602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0968BAC2-A7A6-4E70-AEDC-F15D6A1A37BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0968BAC2-A7A6-4E70-AEDC-F15D6A1A37BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0968BAC2-A7A6-4E70-AEDC-F15D6A1A37BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0968BAC2-A7A6-4E70-AEDC-F15D6A1A37BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DB47B6-86E6-43BC-862F-7B0E9765E503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DB47B6-86E6-43BC-862F-7B0E9765E503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DB47B6-86E6-43BC-862F-7B0E9765E503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DB47B6-86E6-43BC-862F-7B0E9765E503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

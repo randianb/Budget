@@ -1,0 +1,161 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ImportFinaData.aspx.cs" Inherits="WebPage_BudgetEdit_ImportFinaData" %>
+
+<%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+
+
+        var gridCommand = function (sender, command, record) {
+            //if (command == "Publish") {
+            //    Ext.Msg.confirm("提示", "确定发布？", function (btn) {
+            //        if (btn == "yes") {
+            //            App.direct.PublishPolicy(record.data.PLID);
+            //        }
+            //    })
+            //}
+            //if (command == "Modify") {
+            //    App.direct.ModifyPolicy(record.data.PLID);
+            //}
+            if (command == "Delete") {
+                Ext.Msg.confirm("提示", "确定删除？", function (btn) {
+                    if (btn == "yes") {
+                        App.direct.DelFinaData(record.data.ID);
+                    }
+                })
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <ext:ResourceManager ID="ResourceManager1" runat="server">
+        </ext:ResourceManager>
+        <ext:Viewport runat="server" ID="vwpLayout" Layout="AnchorLayout">
+            <Items>
+                <ext:Panel
+                    runat="server"
+                    Title="导入财政数据"
+                    Border="false">
+                    <Items>
+                    </Items>
+                </ext:Panel>
+                <ext:Toolbar ID="Toolbar3" runat="server" Height="35" Border="false" BaseCls="backround:transparent" BorderSpec="0 1 1 0" Layout="ColumnLayout">
+                    <Items>
+                        <ext:Toolbar ID="Toolbar2" runat="server" Height="35" Border="false" Width="300" BorderSpec="0 0 1 0">
+                            <Items>
+                                <ext:ToolbarFill></ext:ToolbarFill>
+                                <ext:Label ID="Label1" runat="server" Text="人员经费（在职）："></ext:Label>
+                            </Items>
+                        </ext:Toolbar>
+                        <ext:Container ID="Container4" runat="server" PaddingSpec="6 0 0 20" Width="60" Height="24">
+                            <Items>
+                                <ext:Button ID="Button2" runat="server" Text="选择文件"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                        <ext:TextField ID="TextField5" runat="server" Text="未选择文件" Height="24" PaddingSpec="6 0 0 20">
+                        </ext:TextField>
+                        <ext:TextField runat="server" FieldLabel="选择年度" Height="24" PaddingSpec="6 0 0 25" LabelWidth="65"></ext:TextField>
+                        <ext:Container runat="server" PaddingSpec="6 0 0 20" Width="40" Height="24">
+                            <Items>
+                                <ext:Button ID="Button1" runat="server" Text="导 入"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                    </Items>
+                </ext:Toolbar>
+                <ext:Toolbar ID="Toolbar1" runat="server" Height="35" Border="false" BaseCls="backround:transparent" BorderSpec="0 1 1 0" Layout="ColumnLayout">
+                    <Items>
+                        <ext:Toolbar ID="Toolbar4" runat="server" Height="35" Border="false" Width="300" BorderSpec="0 0 1 0">
+                            <Items>
+                                <ext:ToolbarFill></ext:ToolbarFill>
+                                <ext:Label ID="Label2" runat="server" Text="人员经费（离休）："></ext:Label>
+                            </Items>
+                        </ext:Toolbar>
+                        <ext:Container ID="Container5" runat="server" PaddingSpec="6 0 0 20" Width="60" Height="24">
+                            <Items>
+                                <ext:Button ID="Button3" runat="server" Text="选择文件"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                        <ext:TextField ID="TextField1" runat="server" Text="未选择文件" Height="24" PaddingSpec="6 0 0 20">
+                        </ext:TextField>
+                        <ext:TextField ID="TextField2" runat="server" FieldLabel="选择年度" Height="24" PaddingSpec="6 0 0 25" LabelWidth="65"></ext:TextField>
+                        <ext:Container ID="Container1" runat="server" PaddingSpec="6 0 0 20" Width="40" Height="24">
+                            <Items>
+                                <ext:Button ID="Button4" runat="server" Text="导 入"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                    </Items>
+                </ext:Toolbar>
+                <ext:Toolbar ID="Toolbar5" runat="server" Height="35" Border="false" BaseCls="backround:transparent" BorderSpec="0 1 1 0" Layout="ColumnLayout">
+                    <Items>
+                        <ext:Toolbar ID="Toolbar6" runat="server" Height="35" Border="false" Width="300" BorderSpec="0 0 1 0">
+                            <Items>
+                                <ext:ToolbarFill></ext:ToolbarFill>
+                                <ext:Label ID="Label3" runat="server" Text="日常公用："></ext:Label>
+                            </Items>
+                        </ext:Toolbar>
+                        <ext:Container ID="Container3" runat="server" PaddingSpec="6 0 0 20" Width="60" Height="24">
+                            <Items>
+                                <ext:Button ID="Button7" runat="server" Text="选择文件"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                        <ext:TextField ID="TextField3" runat="server" Text="未选择文件" Height="24" PaddingSpec="6 0 0 20">
+                        </ext:TextField>
+                        <ext:TextField ID="TextField4" runat="server" FieldLabel="选择年度" Height="24" PaddingSpec="6 0 0 25" LabelWidth="65"></ext:TextField>
+                        <ext:Container ID="Container2" runat="server" PaddingSpec="6 0 0 20" Width="40" Height="24">
+                            <Items>
+                                <ext:Button ID="Button6" runat="server" Text="导 入"></ext:Button>
+                            </Items>
+                        </ext:Container>
+                    </Items>
+                </ext:Toolbar>
+                <ext:GridPanel ID="gridpanel1" runat="server" AutoHeight="false" Layout="FitLayout" AutoScroll="true"
+                    Title="导入财政数据列表">
+                    <Store>
+                        <ext:Store ID="stBudget" runat="server" PageSize="18">
+                            <%--OnReadData="MyData_Refresh"--%>
+                            <Model>
+                                <ext:Model ID="Model1" runat="server">
+                                    <Fields>
+                                        <ext:ModelField Name="ID" Type="string" />
+                                        <ext:ModelField Name="TbName" Type="string" />
+                                        <ext:ModelField Name="Year" Type="string" />
+                                        <ext:ModelField Name="Status" Type="string" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel ID="ColumnModel1" runat="server">
+                        <Columns>
+                            <ext:SummaryColumn Sortable="true" ID="Column1" runat="server" Text="编号" Flex="1" DataIndex="ID" />
+                            <ext:SummaryColumn Sortable="true" ID="Column2" runat="server" Text="表格" Flex="1" DataIndex="TbName" />
+                            <ext:SummaryColumn Sortable="true" ID="Column3" runat="server" Text="时间" Flex="1" DataIndex="Year" />
+                            <ext:SummaryColumn Sortable="true" ID="Column5" runat="server" Text="状态" Flex="1" DataIndex="Status" />
+                            <ext:CommandColumn ID="CommandColumn3" runat="server" Header="删除" Flex="1" DataIndex="">
+                                <Commands>
+                                    <ext:GridCommand Icon="TableEdit" CommandName="Delete" Text="删除" />
+                                </Commands>
+                                <Listeners>
+                                    <Command Fn="gridCommand"></Command>
+                                </Listeners>
+                            </ext:CommandColumn>
+                        </Columns>
+                    </ColumnModel>
+                    <DockedItems>
+                        <ext:PagingToolbar ID="PagingToolbar1" runat="server" HideRefresh="true" Dock="Bottom">
+                        </ext:PagingToolbar>
+                    </DockedItems>
+                </ext:GridPanel>
+            </Items>
+        </ext:Viewport>
+    </form>
+</body>
+</html>

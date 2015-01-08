@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9C6EAFD-5939-46A5-B2FF-6016A0DB7FFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FinaAnaly.DAL</RootNamespace>
+    <AssemblyName>FinaAnaly.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBUnity.cs" />
+    <Compile Include="FA_AccConNumService.cs" />
+    <Compile Include="FA_AddBudConNumService.cs" />
+    <Compile Include="FA_BudConNumService.cs" />
+    <Compile Include="FA_DepartmentService.cs" />
+    <Compile Include="FA_DepBudAllocatService.cs" />
+    <Compile Include="FA_FundsAccountJournalService.cs" />
+    <Compile Include="FA_FundsAccountService.cs" />
+    <Compile Include="FA_FundsAccountUDetailService.cs" />
+    <Compile Include="FA_IncomeAccAllocatService.cs" />
+    <Compile Include="FA_IncomeBudAllocatService.cs" />
+    <Compile Include="FA_OutlayDepCKService.cs" />
+    <Compile Include="FA_OutLayGatherService.cs" />
+    <Compile Include="FA_OutlayIncomeCKService.cs" />
+    <Compile Include="FA_OutlayIncomeDepCKService.cs" />
+    <Compile Include="FA_PayIncomeService.cs" />
+    <Compile Include="FA_PUCIssNumService.cs" />
+    <Compile Include="FA_SysSettingService.cs" />
+    <Compile Include="FA_UserPurviewService.cs" />
+    <Compile Include="FA_UserService.cs" />
+    <Compile Include="FA_WarningQuotaService.cs" />
+    <Compile Include="FA_XIncomeAccAllocatService.cs" />
+    <Compile Include="FA_XIncomeBudAllocatService.cs" />
+    <Compile Include="FA_XOutlayDepCKService.cs" />
+    <Compile Include="FA_XOutlayIncomeCKService.cs" />
+    <Compile Include="FA_XPayIncomeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supply\FA_AccConNumServiceSpp.cs" />
+    <Compile Include="Supply\FA_AddBudConNumServiceSpp.cs" />
+    <Compile Include="Supply\FA_BudConNumServiceSpp.cs" />
+    <Compile Include="Supply\FA_DepartmentServiceSpp.cs" />
+    <Compile Include="Supply\FA_DepBudAllocatServiceSpp.cs" />
+    <Compile Include="Supply\FA_FundsAccountJournalServiceSpp.cs" />
+    <Compile Include="Supply\FA_FundsAccountServiceSpp.cs" />
+    <Compile Include="Supply\FA_FundsAccountUDetailServiceSpp.cs" />
+    <Compile Include="Supply\FA_IncomeAccAllocatServiceSpp.cs" />
+    <Compile Include="Supply\FA_IncomeBudAllocatServiceSpp.cs" />
+    <Compile Include="Supply\FA_OutlayDepCKServiceSpp.cs" />
+    <Compile Include="Supply\FA_OutlayIncomeCKServiceSpp.cs" />
+    <Compile Include="Supply\FA_PayIncomeServiceSpp.cs" />
+    <Compile Include="Supply\FA_ProBasiPerPayOneServiceSpp.cs" />
+    <Compile Include="Supply\FA_PUCIssNumServiceSpp.cs" />
+    <Compile Include="Supply\FA_SysSettingServiceSpp.cs" />
+    <Compile Include="Supply\FA_UserServiceSpp.cs" />
+    <Compile Include="Supply\FA_WarningQuotaServiceSpp.cs" />
+    <Compile Include="Supply\FA_XIncomeAccAllocatServiceSpp.cs" />
+    <Compile Include="Supply\FA_XIncomeBudAllocatServiceSpp.cs" />
+    <Compile Include="Supply\FA_XOutlayDepCKServiceSpp.cs" />
+    <Compile Include="Supply\FA_XOutlayIncomeCKServiceSpp.cs" />
+    <Compile Include="Supply\FA_XPayIncomeServiceSpp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Budget\Budget.Common\Common.csproj">
+      <Project>{F18FF7C9-0FD5-4CF5-8250-44F3A64135C6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FinaAnaly.Model\FinaAnaly.Model.csproj">
+      <Project>{0968bac2-a7a6-4e70-aedc-f15d6a1a37bb}</Project>
+      <Name>FinaAnaly.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
