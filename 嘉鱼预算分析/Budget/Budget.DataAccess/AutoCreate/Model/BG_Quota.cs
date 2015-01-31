@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2015/1/22 8:18:38
+// Auto generated at: 	2014-05-13 11:24:24
 //============================================================
 
 using System;
@@ -18,8 +18,7 @@ namespace BudgetWeb.Model
 	
 		private int qtID; 
 		private int pIID;
-		private decimal baseMon;
-		private decimal proMon;
+		private decimal money;
 		private int year;
 
 		
@@ -43,17 +42,10 @@ namespace BudgetWeb.Model
 		}		
 		
 		
-		public decimal BaseMon
+		public decimal Money
 		{
-			get { return this.baseMon; }
-			set { this.baseMon = value; }
-		}		
-		
-		
-		public decimal ProMon
-		{
-			get { return this.proMon; }
-			set { this.proMon = value; }
+			get { return this.money; }
+			set { this.money = value; }
 		}		
 		
 		

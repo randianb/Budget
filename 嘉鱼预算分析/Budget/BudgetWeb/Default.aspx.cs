@@ -513,14 +513,6 @@ public partial class _Default : BudgetBasePage
             node11.Icon = Icon.PageAttach;
             node11.Leaf = true;
             nodes.Add(node11);
-
-            Node node22 = new Node();
-            node22.NodeID = "NodeBC22";
-            node22.Text = "预算项目";
-            node22.Href = "WebPage\\BudgetControl\\BCPro.aspx";
-            node22.Icon = Icon.PreviousGreen;
-            node22.Leaf = true;
-            nodes.Add(node22);
         }
         if (UserLimStr == "管理员" || UserLimStr == "录入员")
         {

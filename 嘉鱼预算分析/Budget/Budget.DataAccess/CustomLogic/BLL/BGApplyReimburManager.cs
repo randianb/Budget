@@ -165,9 +165,9 @@ public static DataTable GetApplyReimburAllExport(string yearmon)
         /// <param name="arid">申请表ID</param>
         /// <param name="arliststa">申请表状态</param>
         /// <returns>bool</returns>
-        public static bool UpdApplicationStatus1(int PIID,string status, string arexptype, string idStrs,string pro)
+        public static bool UpdApplicationStatus1(int PIID,string status, string arexptype, string idStrs)
         {
-            return BGApplyReimburService.UpdApplicationStatus1(PIID, status, arexptype, idStrs, pro);
+            return BGApplyReimburService.UpdApplicationStatus1(PIID,status, arexptype, idStrs);
         }
         #endregion
 

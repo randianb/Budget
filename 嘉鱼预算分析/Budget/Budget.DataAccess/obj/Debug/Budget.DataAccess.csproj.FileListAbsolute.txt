@@ -414,11 +414,3 @@ E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.DataAccess\bin\D
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.pdb
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\ChineseConverter.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.pdb
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb

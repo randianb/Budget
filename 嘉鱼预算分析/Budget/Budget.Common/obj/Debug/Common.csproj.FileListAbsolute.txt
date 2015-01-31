@@ -23,8 +23,3 @@ E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.Common\bin\Debug
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.Common\obj\Debug\BudgetSys.Common.dll
 E:\所有程序及数据库\嘉鱼预算加分析\Budget\Budget.Common\obj\Debug\BudgetSys.Common.pdb
-E:\Budget\嘉鱼预算分析\Budget\Budget.Common\bin\Debug\BudgetSys.Common.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.Common\bin\Debug\BudgetSys.Common.pdb
-E:\Budget\嘉鱼预算分析\Budget\Budget.Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
-E:\Budget\嘉鱼预算分析\Budget\Budget.Common\obj\Debug\BudgetSys.Common.dll
-E:\Budget\嘉鱼预算分析\Budget\Budget.Common\obj\Debug\BudgetSys.Common.pdb

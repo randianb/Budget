@@ -420,53 +420,7 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
 
         }
     }
-    private decimal getMon(string arexpsub) 
-    {
-        decimal mon=0;
-        DataTable dtpiid = BG_PayIncomeLogic.GetBG_PayIncomeByname(arexpsub);
-        int piid = common.IntSafeConvert(dtpiid.Rows[0]["PIID"]); //支出项目ID
-        string ARTime = Convert.ToDateTime(txtBITime.Text.Trim()).ToString("yyyy-MM");
-        if (!BG_ApplyReimburLogic.ISApplyBackMon(piid, ARTime, DepID))// BG_ApplyReimburLogic.GetARMon(ppid, DepID, ARTime);
-        {
-            //DataTable dt = BG_ApplyReimburLogic.GetARMon(piid, DepID, ARTime);
-            DataTable dt1 = BG_MonPayPlanLogic.GetMpFunding(piid, DepID, ARTime);
-            if (dt1.Rows.Count > 0)
-            {
-                //lbBalance.Text = (Utils.IntSafeConvert(dt1.Rows[0]["MPFunding"]) - Utils.IntSafeConvert(dt.Rows[0]["ARMon"])).ToString();
-                decimal balance = Tdecimal(dt1.Rows[0]["MPFunding"].ToString()) - BG_ApplyReimburLogic.GetARMon(arexpsub, ARTime, DepID);
-                mon = balance * 10000; 
-            }
-            //            else if (BG_ApplyReimburLogic.GetARMon(arexpsub, ARTime, DepID)>0)
-            //            {
-            //                decimal balance = BG_ApplyReimburLogic.GetARMon(arexpsub, ARTime, DepID);
-            //                HidtxtARMon.Text = balance.ToString();
-            //                txtARMon.IndicatorText = "余额为" + (balance*10000).ToString()  + "元";
-            //                Session["txtARMon"] = balance; 
-            //            }
-            else
-            {
-                mon = 0; 
 
-            }
-        }
-        else
-        {
-            DataTable dt1 = BG_MonPayPlanLogic.GetMpFunding(piid, DepID, ARTime);
-            if (dt1.Rows.Count > 0)
-            {
-                //lbBalance.Text = (Utils.IntSafeConvert(dt1.Rows[0]["MPFunding"]) - Utils.IntSafeConvert(dt.Rows[0]["ARMon"])).ToString();
-                decimal balance = Tdecimal(dt1.Rows[0]["MPFunding"].ToString()) * 10000 - BG_ApplyReimburLogic.GetARMon(arexpsub, ARTime, DepID) + BG_ApplyReimburLogic.ApplyBackMon(ARTime, DepID);
-             
-                mon = balance * 10000; 
-            }
-            else
-            {
-                mon = 0; 
-            }
-
-        }
-        return mon;
-    }
     private decimal Tdecimal(string str)
     {
         decimal sss = 0;
@@ -667,12 +621,10 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                 Node nodeN = new Node();
                 nodeN.NodeID = piid.ToString();
                 nodeN.Text = dt.Rows[j]["PIEcoSubName"].ToString();
-                decimal Mon = ParseUtil.ToDecimal(getMon(nodeN.Text).ToString(), 0);
                 if (!BG_PayIncomeLogic.GetBoolPayIncome(incomeinfo, ftype, piid))
                 {
                     nodeN.Icon = Icon.Anchor;
                     node.Add(nodeN);
-                    nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                     nodeN.Leaf = true;
                 }
                 else
@@ -687,13 +639,11 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                         nodeN.Leaf = true;
                         nodeN.Icon = Icon.Anchor;
                         node.Add(nodeN);
-                        nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                     }
                     else
                     {
                         nodeN.Icon = Icon.Folder;
                         node.Add(nodeN);
-                        nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                         SetNode(piid, nodeN);
                     }
                 }
@@ -719,7 +669,6 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                 Node nodeN = new Node();
                 nodeN.NodeID = piid.ToString();
                 nodeN.Text = dt.Rows[j]["PIEcoSubName"].ToString();
-                decimal Mon=ParseUtil.ToDecimal(getMon(nodeN.Text).ToString(),0);
                 if (BG_PayIncomeLogic.GetBoolPayIncomeByPIID(tem))
                 {
 
@@ -728,7 +677,6 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                         nodeN.Icon = Icon.Anchor;
                         node.Children.Add(nodeN);
                         nodeN.Leaf = true;
-                        nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                     }
                     else
                     {
@@ -737,13 +685,11 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                             nodeN.Icon = Icon.Anchor;
                             node.Children.Add(nodeN);
                             nodeN.Leaf = true;
-                            nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                         }
                         else
                         {
                             nodeN.Icon = Icon.Folder;
                             node.Children.Add(nodeN);
-                            nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                             //SetNode(piid, nodes);
                         }
                     }
@@ -759,13 +705,11 @@ public partial class WebPage_BudgetExecute_ApplyAdd : BudgetBasePage
                         nodeN.Leaf = true;
                         nodeN.Icon = Icon.Anchor;
                         node.Children.Add(nodeN);
-                        nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                     }
                     else
                     {
                         nodeN.Icon = Icon.Folder;
                         node.Children.Add(nodeN);
-                        nodeN.CustomAttributes.Add(new ConfigItem("Mon", Mon.ToString(), ParameterMode.Value));
                         //SetNode(piid, nodes);
                     }
                 }

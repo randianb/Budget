@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2015/1/22 8:18:38
+// Auto generated at: 	2014-05-13 11:24:25
 //============================================================
 
 using System;
@@ -19,8 +19,8 @@ namespace BudgetWeb.DAL
         public static BG_Quota AddBG_Quota(BG_Quota bG_Quota)
 		{
             string sql =
-				"INSERT BG_Quota (PIID, BaseMon, ProMon, Year)" +
-				"VALUES (@PIID, @BaseMon, @ProMon, @Year)";
+				"INSERT BG_Quota (PIID, Money, Year)" +
+				"VALUES (@PIID, @Money, @Year)";
 				
 			sql += " ; SELECT @@IDENTITY";
 
@@ -29,8 +29,7 @@ namespace BudgetWeb.DAL
 				SqlParameter[] para = new SqlParameter[]
 				{
 					new SqlParameter("@PIID", bG_Quota.PIID),
-					new SqlParameter("@BaseMon", bG_Quota.BaseMon),
-					new SqlParameter("@ProMon", bG_Quota.ProMon),
+					new SqlParameter("@Money", bG_Quota.Money),
 					new SqlParameter("@Year", bG_Quota.Year)
 				};
 			
@@ -88,8 +87,7 @@ namespace BudgetWeb.DAL
                 "UPDATE BG_Quota " +
                 "SET " +
 	                "PIID = @PIID, " +
-	                "BaseMon = @BaseMon, " +
-	                "ProMon = @ProMon, " +
+	                "Money = @Money, " +
 	                "Year = @Year " +
                 "WHERE QtID = @QtID";
 
@@ -100,8 +98,7 @@ namespace BudgetWeb.DAL
 				{
 					new SqlParameter("@QtID", bG_Quota.QtID),
 					new SqlParameter("@PIID", bG_Quota.PIID),
-					new SqlParameter("@BaseMon", bG_Quota.BaseMon),
-					new SqlParameter("@ProMon", bG_Quota.ProMon),
+					new SqlParameter("@Money", bG_Quota.Money),
 					new SqlParameter("@Year", bG_Quota.Year)
 				};
 
@@ -146,8 +143,7 @@ namespace BudgetWeb.DAL
 
                     bG_Quota.QtID = dt.Rows[0]["QtID"] == DBNull.Value ? 0 : (int)dt.Rows[0]["QtID"];
                     bG_Quota.PIID = dt.Rows[0]["PIID"] == DBNull.Value ? 0 : (int)dt.Rows[0]["PIID"];
-                    bG_Quota.BaseMon = dt.Rows[0]["BaseMon"] == DBNull.Value ? 0 : (decimal)dt.Rows[0]["BaseMon"];
-                    bG_Quota.ProMon = dt.Rows[0]["ProMon"] == DBNull.Value ? 0 : (decimal)dt.Rows[0]["ProMon"];
+                    bG_Quota.Money = dt.Rows[0]["Money"] == DBNull.Value ? 0 : (decimal)dt.Rows[0]["Money"];
                     bG_Quota.Year = dt.Rows[0]["Year"] == DBNull.Value ? 0 : (int)dt.Rows[0]["Year"];
                     
                     return bG_Quota;

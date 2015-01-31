@@ -8,7 +8,7 @@
 
     <script src="../css/mytable.js" type="text/javascript"></script>
     <script src="../My97DatePicker/WdatePicker.js" type="text/javascript"></script>
-    <script src="../../js/jquery-1.7.2.min.js"></script>
+
     <link href="../css/whsystem.css" rel="stylesheet" type="text/css" />
     <link href="../css/whtable.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
@@ -28,16 +28,6 @@
             width: 941px;
         }
     </style>
-    <script type="text/javascript">
-        $(function () {
-            $("#rdPro").click(function () {
-                $("#ddlpro").show();
-            })
-            $("#rdBase").click(function () {
-                $("#ddlpro").hide();
-            })
-        });
-    </script>
 </head>
 <body>
 
@@ -153,9 +143,6 @@
                         &nbsp;&nbsp;
                         <asp:RadioButton runat="server" ID="rdBase" GroupName="rd" Text="基本支出" Checked="true" />
                         <asp:RadioButton runat="server" ID="rdPro" GroupName="rd" Text="项目支出" />
-                        <br />
-                         &nbsp;&nbsp;
-                        <asp:DropDownList style="display:none" runat="server" ID="ddlpro"  Height="20px" Width="300px" AutoPostBack="true"></asp:DropDownList>
                     </td>
 
                 </tr>

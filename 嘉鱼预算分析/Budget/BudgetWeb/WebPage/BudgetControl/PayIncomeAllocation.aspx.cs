@@ -831,13 +831,13 @@ public partial class WebPage_BudgetControl_PayIncomeAllocation : BudgetBasePage
                         }
                     }
                 }
-                //decimal QuotaMon = BG_QuotaLogic.GetQuotaMoney(piid, year);
-                //if (QuotaMon>0&&QuotaMon-(bgadd.BAAMon+bgadd.SuppMon)<0)
-                //{
-                //    X.Msg.Alert("提示", "该科目设置总金额超过年度设置的定额标准，请核实后修改数据！").Show();
-                //    rc.SetValue(rc.OldValue<float>());
-                //    return;
-                //}
+                decimal QuotaMon = BG_QuotaLogic.GetQuotaMoney(piid, year);
+                if (QuotaMon>0&&QuotaMon-(bgadd.BAAMon+bgadd.SuppMon)<0)
+                {
+                    X.Msg.Alert("提示", "该科目设置总金额超过年度设置的定额标准，请核实后修改数据！").Show();
+                    rc.SetValue(rc.OldValue<float>());
+                    return;
+                }
                 bgadd.PIID = piid;
                 bgadd.BAAYear = year;
                 bgadd.DepID = depid;
@@ -916,13 +916,13 @@ public partial class WebPage_BudgetControl_PayIncomeAllocation : BudgetBasePage
                         }
                     }
                 }
-                //decimal QuotaMon = BG_QuotaLogic.GetQuotaMoney(piid, year);
-                //if (QuotaMon>0&&QuotaMon-(bg.BAAMon+bg.SuppMon)<0)
-                //{
-                //    X.Msg.Alert("提示", "该科目设置总金额超过年度设置的定额标准，请核实后修改数据！").Show();
-                //    rc.SetValue(rc.OldValue<float>());
-                //    return;
-                //}
+                decimal QuotaMon = BG_QuotaLogic.GetQuotaMoney(piid, year);
+                if (QuotaMon>0&&QuotaMon-(bg.BAAMon+bg.SuppMon)<0)
+                {
+                    X.Msg.Alert("提示", "该科目设置总金额超过年度设置的定额标准，请核实后修改数据！").Show();
+                    rc.SetValue(rc.OldValue<float>());
+                    return;
+                }
                 BG_BudgetAllocationManager.ModifyBG_BudgetAllocation(bg);
                 DtDataBind();
                 //if (baamon < 0 || suppmon < 0)

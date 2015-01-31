@@ -90,7 +90,6 @@
     <Compile Include="AutoCreate\BLL\BG_ProBasiPerPayOneManager.cs" />
     <Compile Include="AutoCreate\BLL\BG_ProBasiPerPayTwoManager.cs" />
     <Compile Include="AutoCreate\BLL\BG_ProBasiPubPayManager.cs" />
-    <Compile Include="AutoCreate\BLL\BG_ProjectManager.cs" />
     <Compile Include="AutoCreate\BLL\BG_ProPayManager.cs" />
     <Compile Include="AutoCreate\BLL\BG_ProvBudItemsManager.cs" />
     <Compile Include="AutoCreate\BLL\BG_QuotaManager.cs" />
@@ -138,7 +137,6 @@
     <Compile Include="AutoCreate\DAL\BG_ProBasiPerPayOneService.cs" />
     <Compile Include="AutoCreate\DAL\BG_ProBasiPerPayTwoService.cs" />
     <Compile Include="AutoCreate\DAL\BG_ProBasiPubPayService.cs" />
-    <Compile Include="AutoCreate\DAL\BG_ProjectService.cs" />
     <Compile Include="AutoCreate\DAL\BG_ProPayService.cs" />
     <Compile Include="AutoCreate\DAL\BG_ProvBudItemsService.cs" />
     <Compile Include="AutoCreate\DAL\BG_QuotaService.cs" />
@@ -188,7 +186,6 @@
     <Compile Include="AutoCreate\Model\BG_ProBasiPerPayOne.cs" />
     <Compile Include="AutoCreate\Model\BG_ProBasiPerPayTwo.cs" />
     <Compile Include="AutoCreate\Model\BG_ProBasiPubPay.cs" />
-    <Compile Include="AutoCreate\Model\BG_Project.cs" />
     <Compile Include="AutoCreate\Model\BG_ProPay.cs" />
     <Compile Include="AutoCreate\Model\BG_ProvBudItems.cs" />
     <Compile Include="AutoCreate\Model\BG_Quota.cs" />

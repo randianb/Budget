@@ -20,7 +20,7 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
             txtARReiSinNum.Text = ConfigurationManager.AppSettings["AreaCode"].ToString() + DateTime.Now.ToString("yyyyMMddhhmmss") + new Random().Next(10000);
             ARExpSubDataBind();
             ApplyAlterDataBind();
-            ProjectDataBind();
+           
         }
     }
 
@@ -31,15 +31,8 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
        ddlARExpSub.DataValueField = "PIEcoSubName";
        ddlARExpSub.DataSource = dt;
        ddlARExpSub.DataBind();  
-    }
-    private void ProjectDataBind()
-    {
-        DataTable dt = BG_ProjectManager.GetAllBG_Project();
-        ddlpro.DataTextField = "PJName";
-        ddlpro.DataValueField = "PJID";
-        ddlpro.DataSource = dt;
-        ddlpro.DataBind();
-    }
+    } 
+
     private void ApplyAlterDataBind()
     {
         DataTable dt = BGApplyReimburManager.GetApplyReimbur(arid); //BGPayIncomeManager.GetPayIncomeListByPIID(arid)
@@ -148,7 +141,7 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
     {
         int Subcoding = 0;
 
-        string artype = ""; string pro = "";
+        string artype = "";
         if (rdBase.Checked == true)
         {
             artype = "基本支出";
@@ -156,7 +149,6 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
         else
         {
             artype = "项目支出";
-            pro = ddlpro.SelectedItem.Text;
         }
         if (ddlType.SelectedItem.Value == "财政拨款")
         {
@@ -181,8 +173,9 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
             }
         }
         string ARExpSub = ddlARExpSub.SelectedItem.Text.ToString();
-        int PIID = BG_PayIncomeLogic.GetPIIDbycoding(Subcoding, ARExpSub); 
-        if (BGApplyReimburManager.UpdApplicationStatus1(PIID, "审核通过", artype, arid,pro))
+        int PIID = BG_PayIncomeLogic.GetPIIDbycoding(Subcoding, ARExpSub);
+
+        if (BGApplyReimburManager.UpdApplicationStatus1(PIID, "审核通过", artype, arid))
         {
             Response.Redirect("ReimApproval.aspx", true);
         }
@@ -190,5 +183,5 @@ public partial class WebPage_BudgetExecute_ApprovalList : System.Web.UI.Page
         {
 
         }
-    } 
+    }
 }
