@@ -110,13 +110,14 @@
             Frame="true" ButtonAlign="Left">
             <FieldDefaults>
                 <CustomConfig>
-                    <ext:ConfigItem Name="LabelWidth" Value="100" Mode="Raw" />
+                    <ext:ConfigItem Name="LabelWidth" Value="100" Mode="Raw" /> 
+                    
                     <ext:ConfigItem Name="PreserveIndicatorIcon" Value="true" Mode="Raw" />
                 </CustomConfig>
             </FieldDefaults>
             <Items>
                 <ext:Panel runat="server">
-                    <Defaults>
+                    <Defaults>  
                         <ext:Parameter Name="AllowBlank" Value="false" Mode="Raw" />
                         <ext:Parameter Name="MsgTarget" Value="side" />
                     </Defaults>
@@ -159,10 +160,10 @@
                         <ext:DropDownField
                             PaddingSpec="0 0 0 10"
                             ID="ddlARExpSub"
-                            FieldLabel="支出科目"
+                            FieldLabel="支出科目"  
                             runat="server"
                             Editable="false"
-                            TriggerIcon="SimpleArrowDown"
+                            TriggerIcon="SimpleArrowDown" Width="500"
                             Mode="ValueText">
                             <Component>
                                 <ext:TreePanel ID="TPPayIncome"
@@ -177,11 +178,13 @@
                                     RootVisible="false">
                                     <Fields>
                                         <ext:ModelField Name="text" />
+                                        <ext:ModelField Name="Mon" />
                                     </Fields>
                                     <ColumnModel>
                                         <Columns>
                                             <ext:TreeColumn ID="TreeColumn1" Sortable="false" runat="server" DataIndex="text" Text="经济科目" Flex="4">
                                             </ext:TreeColumn>
+                                            <ext:NumberColumn Sortable="false" runat="server" Text="金额" Flex="2"  DataIndex="Mon"></ext:NumberColumn>
                                         </Columns>
                                     </ColumnModel>
                                     <Buttons>

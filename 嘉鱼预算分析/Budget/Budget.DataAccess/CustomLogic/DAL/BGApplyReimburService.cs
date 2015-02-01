@@ -292,18 +292,18 @@ namespace BudgetWeb.DAL
         /// <param name="arid">申请表ID</param>
         /// <param name="arliststa">申请表状态</param>
         /// <returns>bool</returns>
-        public static bool UpdApplicationStatus1(int PIID,string status, string arexptype, string idStrs)
+        public static bool UpdApplicationStatus1(int PIID,string status, string arexptype, string idStrs,string pro)
         {
             bool flag = false;
             try
             {
-                string sqlStr = "update  BG_ApplyReimbur set ARListSta='{0}' , ARExpType='{1}' ,PPID='{3}' where  ARID in ({2})";
+                string sqlStr = "update  BG_ApplyReimbur set ARListSta='{0}' , ARExpType='{1}' ,PPID='{3}',ProName='{4}' where  ARID in ({2})";
                 //SqlParameter[] Pars = new SqlParameter[]{
                 //        new SqlParameter("@ARID",arid),
                 //        new SqlParameter("@ARListSta",arliststa),
                 //        };
 
-                sqlStr = string.Format(sqlStr, status, arexptype, idStrs, PIID);
+                sqlStr = string.Format(sqlStr, status, arexptype, idStrs, PIID,pro);
                 flag = DBUnity.ExecuteNonQuery(CommandType.Text, sqlStr, null) > 0;
             }
             catch (Exception ex)

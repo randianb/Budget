@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2015/1/22 8:18:38
+// Auto generated at: 	2015/1/21 16:13:05
 //============================================================
 
 using System;
@@ -14,13 +14,13 @@ using BudgetWeb.Model;
 
 namespace BudgetWeb.DAL
 {
-	public static partial class BG_QuotaService
+	public static partial class BG_ProjectService
 	{
-        public static BG_Quota AddBG_Quota(BG_Quota bG_Quota)
+        public static BG_Project AddBG_Project(BG_Project bG_Project)
 		{
             string sql =
-				"INSERT BG_Quota (PIID, BaseMon, ProMon, Year)" +
-				"VALUES (@PIID, @BaseMon, @ProMon, @Year)";
+				"INSERT BG_Project (PJName)" +
+				"VALUES (@PJName)";
 				
 			sql += " ; SELECT @@IDENTITY";
 
@@ -28,15 +28,12 @@ namespace BudgetWeb.DAL
             {
 				SqlParameter[] para = new SqlParameter[]
 				{
-					new SqlParameter("@PIID", bG_Quota.PIID),
-					new SqlParameter("@BaseMon", bG_Quota.BaseMon),
-					new SqlParameter("@ProMon", bG_Quota.ProMon),
-					new SqlParameter("@Year", bG_Quota.Year)
+					new SqlParameter("@PJName", bG_Project.PJName)
 				};
 			
                 string IdStr = DBUnity.ExecuteScalar(CommandType.Text, sql, para);
                 int newId = Convert.ToInt32(IdStr);
-                return GetBG_QuotaByQtID(newId);
+                return GetBG_ProjectByPJID(newId);
 
             }
             catch (Exception e)
@@ -46,20 +43,20 @@ namespace BudgetWeb.DAL
             }
 		}
 		
-        public static bool DeleteBG_Quota(BG_Quota bG_Quota)
+        public static bool DeleteBG_Project(BG_Project bG_Project)
 		{
-			return DeleteBG_QuotaByQtID( bG_Quota.QtID );
+			return DeleteBG_ProjectByPJID( bG_Project.PJID );
 		}
 
-        public static bool DeleteBG_QuotaByQtID(int qtID)
+        public static bool DeleteBG_ProjectByPJID(int pJID)
 		{
-            string sql = "DELETE BG_Quota WHERE QtID = @QtID";
+            string sql = "DELETE BG_Project WHERE PJID = @PJID";
 
             try
             {
 				SqlParameter[] para = new SqlParameter[]
 				{
-					new SqlParameter("@QtID", qtID)
+					new SqlParameter("@PJID", pJID)
 				};
 			
                 int t = DBUnity.ExecuteNonQuery(CommandType.Text, sql, para);
@@ -82,27 +79,21 @@ namespace BudgetWeb.DAL
 					
 
 
-        public static bool ModifyBG_Quota(BG_Quota bG_Quota)
+        public static bool ModifyBG_Project(BG_Project bG_Project)
         {
             string sql =
-                "UPDATE BG_Quota " +
+                "UPDATE BG_Project " +
                 "SET " +
-	                "PIID = @PIID, " +
-	                "BaseMon = @BaseMon, " +
-	                "ProMon = @ProMon, " +
-	                "Year = @Year " +
-                "WHERE QtID = @QtID";
+	                "PJName = @PJName " +
+                "WHERE PJID = @PJID";
 
 
             try
             {
 				SqlParameter[] para = new SqlParameter[]
 				{
-					new SqlParameter("@QtID", bG_Quota.QtID),
-					new SqlParameter("@PIID", bG_Quota.PIID),
-					new SqlParameter("@BaseMon", bG_Quota.BaseMon),
-					new SqlParameter("@ProMon", bG_Quota.ProMon),
-					new SqlParameter("@Year", bG_Quota.Year)
+					new SqlParameter("@PJID", bG_Project.PJID),
+					new SqlParameter("@PJName", bG_Project.PJName)
 				};
 
                 int t = DBUnity.ExecuteNonQuery(CommandType.Text, sql, para);
@@ -124,33 +115,30 @@ namespace BudgetWeb.DAL
         }		
 
 
-        public static DataTable GetAllBG_Quota()
+        public static DataTable GetAllBG_Project()
         {
-            string sqlAll = "SELECT * FROM BG_Quota";
-			return GetBG_QuotaBySql( sqlAll );
+            string sqlAll = "SELECT * FROM BG_Project";
+			return GetBG_ProjectBySql( sqlAll );
         }
 		
 
-        public static BG_Quota GetBG_QuotaByQtID(int qtID)
+        public static BG_Project GetBG_ProjectByPJID(int pJID)
         {
-            string sql = "SELECT * FROM BG_Quota WHERE QtID = @QtID";
+            string sql = "SELECT * FROM BG_Project WHERE PJID = @PJID";
 
             try
             {
-                SqlParameter para = new SqlParameter("@QtID", qtID);
+                SqlParameter para = new SqlParameter("@PJID", pJID);
                 DataTable dt = DBUnity.AdapterToTab(sql, para);
                 
                 if(dt.Rows.Count > 0)
                 {
-                    BG_Quota bG_Quota = new BG_Quota();
+                    BG_Project bG_Project = new BG_Project();
 
-                    bG_Quota.QtID = dt.Rows[0]["QtID"] == DBNull.Value ? 0 : (int)dt.Rows[0]["QtID"];
-                    bG_Quota.PIID = dt.Rows[0]["PIID"] == DBNull.Value ? 0 : (int)dt.Rows[0]["PIID"];
-                    bG_Quota.BaseMon = dt.Rows[0]["BaseMon"] == DBNull.Value ? 0 : (decimal)dt.Rows[0]["BaseMon"];
-                    bG_Quota.ProMon = dt.Rows[0]["ProMon"] == DBNull.Value ? 0 : (decimal)dt.Rows[0]["ProMon"];
-                    bG_Quota.Year = dt.Rows[0]["Year"] == DBNull.Value ? 0 : (int)dt.Rows[0]["Year"];
+                    bG_Project.PJID = dt.Rows[0]["PJID"] == DBNull.Value ? 0 : (int)dt.Rows[0]["PJID"];
+                    bG_Project.PJName = dt.Rows[0]["PJName"] == DBNull.Value ? "" : (string)dt.Rows[0]["PJName"];
                     
-                    return bG_Quota;
+                    return bG_Project;
                 }
                 else
                 {
@@ -167,7 +155,7 @@ namespace BudgetWeb.DAL
 
       
 
-        private static DataTable GetBG_QuotaBySql(string safeSql)
+        private static DataTable GetBG_ProjectBySql(string safeSql)
         {
 
 			try
@@ -183,7 +171,7 @@ namespace BudgetWeb.DAL
 
         }
 		
-        private static DataTable GetBG_QuotaBySql(string sql, params SqlParameter[] values)
+        private static DataTable GetBG_ProjectBySql(string sql, params SqlParameter[] values)
         {
 
 			try
