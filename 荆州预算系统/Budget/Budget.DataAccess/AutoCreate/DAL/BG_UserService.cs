@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2014/11/9 15:51:44
+// Auto generated at: 	2015/3/4 16:05:09
 //============================================================
 
 using System;
@@ -19,8 +19,8 @@ namespace BudgetWeb.DAL
         public static BG_User AddBG_User(BG_User bG_User)
 		{
             string sql =
-				"INSERT BG_User (UserName, UserNum, UserIDNum, UserPwd, UserLim, UserSta, DepID, UserRem, IsVIP, UserDescription, IsLogin)" +
-				"VALUES (@UserName, @UserNum, @UserIDNum, @UserPwd, @UserLim, @UserSta, @DepID, @UserRem, @IsVIP, @UserDescription, @IsLogin)";
+				"INSERT BG_User (UserName, UserNum, UserIDNum, UserPwd, UserLim, UserSta, DepID, UserRem, IsVIP, UserDescription, IsLogin, ApplyRem)" +
+				"VALUES (@UserName, @UserNum, @UserIDNum, @UserPwd, @UserLim, @UserSta, @DepID, @UserRem, @IsVIP, @UserDescription, @IsLogin, @ApplyRem)";
 				
 			sql += " ; SELECT @@IDENTITY";
 
@@ -38,7 +38,8 @@ namespace BudgetWeb.DAL
 					new SqlParameter("@UserRem", bG_User.UserRem),
 					new SqlParameter("@IsVIP", bG_User.IsVIP),
 					new SqlParameter("@UserDescription", bG_User.UserDescription),
-					new SqlParameter("@IsLogin", bG_User.IsLogin)
+					new SqlParameter("@IsLogin", bG_User.IsLogin),
+					new SqlParameter("@ApplyRem", bG_User.ApplyRem)
 				};
 			
                 string IdStr = DBUnity.ExecuteScalar(CommandType.Text, sql, para);
@@ -104,7 +105,8 @@ namespace BudgetWeb.DAL
 	                "UserRem = @UserRem, " +
 	                "IsVIP = @IsVIP, " +
 	                "UserDescription = @UserDescription, " +
-	                "IsLogin = @IsLogin " +
+	                "IsLogin = @IsLogin, " +
+	                "ApplyRem = @ApplyRem " +
                 "WHERE UserID = @UserID";
 
 
@@ -123,7 +125,8 @@ namespace BudgetWeb.DAL
 					new SqlParameter("@UserRem", bG_User.UserRem),
 					new SqlParameter("@IsVIP", bG_User.IsVIP),
 					new SqlParameter("@UserDescription", bG_User.UserDescription),
-					new SqlParameter("@IsLogin", bG_User.IsLogin)
+					new SqlParameter("@IsLogin", bG_User.IsLogin),
+					new SqlParameter("@ApplyRem", bG_User.ApplyRem)
 				};
 
                 int t = DBUnity.ExecuteNonQuery(CommandType.Text, sql, para);
@@ -177,6 +180,7 @@ namespace BudgetWeb.DAL
                     bG_User.IsVIP = dt.Rows[0]["IsVIP"] == DBNull.Value ? 0 : (int)dt.Rows[0]["IsVIP"];
                     bG_User.UserDescription = dt.Rows[0]["UserDescription"] == DBNull.Value ? "" : (string)dt.Rows[0]["UserDescription"];
                     bG_User.IsLogin = dt.Rows[0]["IsLogin"] == DBNull.Value ? 0 : (int)dt.Rows[0]["IsLogin"];
+                    bG_User.ApplyRem = dt.Rows[0]["ApplyRem"] == DBNull.Value ? "" : (string)dt.Rows[0]["ApplyRem"];
                     
                     return bG_User;
                 }

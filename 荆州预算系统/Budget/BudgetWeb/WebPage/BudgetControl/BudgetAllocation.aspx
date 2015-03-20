@@ -6,194 +6,247 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
-	<script src="../../js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript">
-		var Selector = {
-			add: function () {
-				//source = source || (App.GridPanel2 && App.GridPanel3 && App.GridPanel4 && App.GridPanel5 && App.GridPanel6);
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        var Selector = {
+            add: function () {
+                //source = source || (App.GridPanel2 && App.GridPanel3 && App.GridPanel4 && App.GridPanel5 && App.GridPanel6);
 
-				var flag;
-				var select = "";
-				source = App.gridselect;
-				if (source.selModel.hasSelection()) {
-					var records = source.selModel.getSelection();
+                var flag;
+                var select = "";
+                source = App.gridselect;
+                if (source.selModel.hasSelection()) {
+                    var records = source.selModel.getSelection();
 
-					for (var k = 0; k < records.length; k++) {
-						if (k == records.length - 1) {
-							select += records[k].data.PIEcoSubName;
-							flag = records[k].data.ISSign;
-						}
-						else {
-							select += records[k].data.PIEcoSubName + ",";
-							flag = records[k].data.ISSign;
-						}
-						App.direct.insertSign(records[k].data.PIID, flag);
-					}
-				}
-				$("#Hidselector").val(select);
-				Ext.Msg.alert("操作提示", "保存成功，请点击“提交”按钮进行查询分配操作!");
-			}
-		}
-
-
-		//var CountrySelector = {
-		//    add: function () {
-		//        var source = App.TPPayIncome;
-		//        if (source.selModel.hasSelection()) {
-		//            var records = source.selModel.getSelection();
-		//            for (var i = 0; i < records.length; i++) {
-		//                select += records[i].data.PIID + ",";
-		//            }
-		//        }
-		//        $("#Hidselector").val(select);
-		//    }
-		//}
-		//var GetSelect = function () {
-		//    var select = "";
-		//    selChildren = App.TPPayIncome.getChecked();
-
-		//    Ext.each(selChildren, function (node) {
-		//        if (select.length > 0) {
-		//            select += ", ";
-		//        }
-
-		//        select += node.data.text;
-		//    });
-		//    $("#Hidselector").val(select);
-		//}
+                    for (var k = 0; k < records.length; k++) {
+                        if (k == records.length - 1) {
+                            select += records[k].data.PIEcoSubName;
+                            flag = records[k].data.ISSign;
+                        }
+                        else {
+                            select += records[k].data.PIEcoSubName + ",";
+                            flag = records[k].data.ISSign;
+                        }
+                        App.direct.insertSign(records[k].data.PIID, flag);
+                    }
+                }
+                $("#Hidselector").val(select);
+                Ext.Msg.alert("操作提示", "保存成功，请点击“提交”按钮进行查询分配操作!");
+            }
+        }
 
 
-		var gridCommand = function (sender, command, record) {
+        //var CountrySelector = {
+        //    add: function () {
+        //        var source = App.TPPayIncome;
+        //        if (source.selModel.hasSelection()) {
+        //            var records = source.selModel.getSelection();
+        //            for (var i = 0; i < records.length; i++) {
+        //                select += records[i].data.PIID + ",";
+        //            }
+        //        }
+        //        $("#Hidselector").val(select);
+        //    }
+        //}
+        //var GetSelect = function () {
+        //    var select = "";
+        //    selChildren = App.TPPayIncome.getChecked();
 
-			if (command == "Divide") {
-				//$("#HidDepid").val(record.data.DepID);
-				App.direct.DivideData(record.data.DepID);
-			}
-		}
-	</script>
-	<style type="text/css">
-		.cbStates-list {
-			width: 298px;
-			font: 11px tahoma,arial,helvetica,sans-serif;
-		}
+        //    Ext.each(selChildren, function (node) {
+        //        if (select.length > 0) {
+        //            select += ", ";
+        //        }
 
-			.cbStates-list th {
-				font-weight: bold;
-			}
+        //        select += node.data.text;
+        //    });
+        //    $("#Hidselector").val(select);
+        //}
 
-			.cbStates-list td, .cbStates-list th {
-				padding: 3px;
-			}
 
-		.list-item {
-			cursor: pointer;
-		}
-	</style>
-	<link href="/resources/css/examples.css" rel="stylesheet" />
+        var gridCommand = function (sender, command, record) {
+
+            if (command == "Divide") {
+                //$("#HidDepid").val(record.data.DepID);
+                App.direct.DivideData(record.data.DepID);
+            }
+        }
+    </script>
+    <style type="text/css">
+        .cbStates-list {
+            width: 298px;
+            font: 11px tahoma,arial,helvetica,sans-serif;
+        }
+
+            .cbStates-list th {
+                font-weight: bold;
+            }
+
+            .cbStates-list td, .cbStates-list th {
+                padding: 3px;
+            }
+
+        .list-item {
+            cursor: pointer;
+        }
+    </style>
+    <link href="/resources/css/examples.css" rel="stylesheet" />
 </head>
 <body>
-	<form id="form1" runat="server">
-		<%--<asp:HiddenField  runat="server" id="HidDepid"/>--%>
-		<ext:ResourceManager ID="ResourceManager1" runat="server" />
+    <form id="form1" runat="server">
+        <%--<asp:HiddenField  runat="server" id="HidDepid"/>--%>
+        <ext:ResourceManager ID="ResourceManager1" runat="server" />
 
-		<ext:Viewport runat="server" ID="vwpLayout" Layout="fit">
-			<Items> 
-				<ext:Hidden ID="supp" runat="server"></ext:Hidden>
-				<ext:Hidden ID="baa" runat="server"></ext:Hidden>
-				<ext:Hidden runat="server" ID="Hidselector"></ext:Hidden>
-				<ext:Hidden runat="server" ID="HidYear"></ext:Hidden>
-				<ext:GridPanel ID="GridPanel1" ColumnLines="true"
-					runat="server"
-					Title="预算分配">
-					<Store>
-						<ext:Store ID="Store1" runat="server">
-							<Model>
-								<ext:Model ID="Model1" runat="server">
-									<Fields>
-										<ext:ModelField Name="DepID" />
-										<ext:ModelField Name="DepNum" />
-										<ext:ModelField Name="BAAMon" Type="Float" />
-										<ext:ModelField Name="SuppMon" Type="Float" />
-										<ext:ModelField Name="DepName" />
+        <ext:Viewport runat="server" ID="vwpLayout" Layout="fit">
+            <Items>
+                <ext:Hidden ID="supp" runat="server"></ext:Hidden>
+                <ext:Hidden ID="baa" runat="server"></ext:Hidden>
+                <ext:Hidden runat="server" ID="Hidselector"></ext:Hidden>
+                <ext:Hidden runat="server" ID="HidYear"></ext:Hidden>
+                <ext:GridPanel ID="GridPanel1" ColumnLines="true"
+                    runat="server"
+                    Title="预算分配">
+                    <Store>
+                        <ext:Store ID="Store1" runat="server">
+                            <Model>
+                                <ext:Model ID="Model1" runat="server">
+                                    <Fields>
+                                        <ext:ModelField Name="DepID" />
+                                        <ext:ModelField Name="DepNum" />
+                                        <ext:ModelField Name="BAAMon" Type="Float" />
+                                        <ext:ModelField Name="SuppMon" Type="Float" />
+                                        <ext:ModelField Name="DepName" />
 
-									</Fields>
-								</ext:Model>
-							</Model>
-						</ext:Store>
-					</Store>
-					<ColumnModel ID="ColumnModel1" runat="server">
-						<Columns>
-							<ext:Column ID="Column1"
-								runat="server"
-								Text="编号"
-								Width="100" Align="Center"
-								DataIndex="DepNum" />
+                                    </Fields>
+                                </ext:Model>
+                            </Model>
+                        </ext:Store>
+                    </Store>
+                    <ColumnModel ID="ColumnModel1" runat="server">
+                        <Columns>
+                            <ext:Column ID="Column1"
+                                runat="server"
+                                Text="编号"
+                                Width="100" Align="Center"
+                                DataIndex="DepNum" />
 
-							<ext:Column ID="Column2"
-								runat="server"
-								Text="部门名称"
-								DataIndex="DepName"
-								Flex="1" />
-							<ext:Column ID="Column3"
-								runat="server"
-								Text="分配金额（万元）"
-								DataIndex="BAAMon"
-								EmptyCellText="0.00"
-								Flex="1" />
-							<ext:Column ID="Column4"
-								runat="server"
-								Text="追加金额（万元）"
-								EmptyCellText="0.00"
-								DataIndex="SuppMon"
-								Flex="1" />
-							<ext:CommandColumn ID="CommandColumn1" runat="server" Header="用户操作" Width="200">
-								<Commands>
-									<ext:GridCommand Icon="TableEdit" CommandName="Divide" Text="分配" />
-								</Commands>
-								<Listeners>
-									<Command Fn="gridCommand"></Command>
-								</Listeners>
-							</ext:CommandColumn>
-						</Columns>
-					</ColumnModel>
+                            <ext:Column ID="Column2"
+                                runat="server"
+                                Text="部门名称"
+                                DataIndex="DepName"
+                                Flex="1" />
+                            <ext:Column ID="Column3"
+                                runat="server"
+                                Text="分配金额（万元）"
+                                DataIndex="BAAMon"
+                                EmptyCellText="0.00"
+                                Flex="1" />
+                            <ext:Column ID="Column4"
+                                runat="server"
+                                Text="追加金额（万元）"
+                                EmptyCellText="0.00"
+                                DataIndex="SuppMon"
+                                Flex="1" />
+                            <ext:CommandColumn ID="CommandColumn1" runat="server" Header="用户操作" Width="200">
+                                <Commands>
+                                    <ext:GridCommand Icon="TableEdit" CommandName="Divide" Text="分配" />
+                                </Commands>
+                                <Listeners>
+                                    <Command Fn="gridCommand"></Command>
+                                </Listeners>
+                            </ext:CommandColumn>
+                        </Columns>
+                    </ColumnModel>
 
-					<TopBar>
-						<ext:Toolbar ID="Toolbar1" runat="server" Height="25">
-							<Items>
-								<%--<ext:Button ID="btnAdd"
+                    <TopBar>
+                        <ext:Toolbar ID="Toolbar1" runat="server" Height="40" Flat="false" Layout="TableLayout">
+                            <LayoutConfig>
+                                <ext:TableLayoutConfig Columns="5" />
+                            </LayoutConfig> 
+                            <Items>
+                                <%--<ext:Button ID="btnAdd"
 									Icon="ApplicationAdd"
 									runat="server" Text="增加" OnDirectClick="btnAdd_DirectClick" />--%>
-								<ext:Label ID="Label6" runat="server" Text=""></ext:Label>
-								<ext:Label ID="Label3" runat="server" Text="年度省级下发余额"></ext:Label>
-								<ext:Label ID="Label4" runat="server" Text=""></ext:Label>
-								<ext:Label ID="Label1" runat="server" Text="万元"></ext:Label>
-								<ext:Label ID="Label7" runat="server" MarginSpec="0 0 0 50" Text="追加金额"></ext:Label>
-								<ext:Label ID="Label5" runat="server" Text=""></ext:Label>
-								<ext:Label ID="Label2" runat="server" Text="万元"></ext:Label>
-								<ext:ToolbarFill></ext:ToolbarFill>
-								<ext:Panel runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
-									<Items>
-										<ext:Button runat="Server" Text="分配设置" ID="BtnSettingPayIncome"  Hidden="true" OnDirectClick="BtnSettingPayIncome_DirectClick"></ext:Button>
-									</Items>
-								</ext:Panel>
-							</Items>
-						</ext:Toolbar>
-
-					</TopBar>
-				</ext:GridPanel>
-			</Items>
-		</ext:Viewport>
-		<ext:Window Hidden="true" runat="Server" Width="336" Height="180" ID="Windows" Layout="FitLayout">
-			<Items>
-				<ext:FormPanel BaseCls="background:transeparent" ButtonAlign="Right" Border="false" ID="FPCMB" runat="Server" MarginSpec="10 0 10 0" Layout="ColumnLayout">
-					<Defaults>
-						<ext:Parameter Name="AllowBlank" Value="false" Mode="Raw" />
-						<ext:Parameter Name="MsgTarget" Value="side" />
-					</Defaults>
-					<Items>
-						<%--<ext:ComboBox ID="cmballocation" runat="Server" EmptyText="请选择">
+                                <ext:Panel ID="Panel1" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label6" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label3" runat="server" Text="年度省级下发余额"></ext:Label>
+                                        <ext:Label ID="YTDProvinceMon" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label1" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel2" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label8" runat="server" MarginSpec="0 0 0 50" Text="已分配余额"></ext:Label>
+                                        <ext:Label ID="Deserved" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label10" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel3" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label11" runat="server" MarginSpec="0 0 0 50" Text="剩余金额"></ext:Label>
+                                        <ext:Label ID="ResidualMon" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label13" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel4" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label7" runat="server" MarginSpec="0 0 0 50" Text="追加金额"></ext:Label>
+                                        <ext:Label ID="SuppMon" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label28" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:ToolbarFill></ext:ToolbarFill>
+                                <ext:Panel ID="Panel5" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="label16" runat="server" MarginSpec="0 0 0 50" Text="剩余追加金额"></ext:Label>
+                                        <ext:Label ID="ResidualSuppMon" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label15" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel6" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label17" runat="server" MarginSpec="0 0 0 50" Text="本年预算总金额"></ext:Label>
+                                        <ext:Label ID="BudgetTatol" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label19" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel7" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label20" runat="server" MarginSpec="0 0 0 50" Text="本年已分配金额"></ext:Label>
+                                        <ext:Label ID="YTDDeserved" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label22" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:Panel ID="Panel8" runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Label ID="Label23" runat="server" MarginSpec="0 0 0 50" Text="本年剩余金额"></ext:Label>
+                                        <ext:Label ID="YTDResidualMon" runat="server" Text=""></ext:Label>
+                                        <ext:Label ID="Label25" runat="server" Text="万元"></ext:Label>
+                                    </Items>
+                                </ext:Panel>
+                                <ext:ToolbarFill></ext:ToolbarFill>
+                                <ext:Panel runat="Server" Border="false" BaseCls="background:transeparent" ButtonAlign="Right">
+                                    <Items>
+                                        <ext:Button runat="Server" Text="分配设置" ID="BtnSettingPayIncome" Hidden="true" OnDirectClick="BtnSettingPayIncome_DirectClick"></ext:Button>
+                                    </Items>
+                                </ext:Panel>
+                            </Items>
+                        </ext:Toolbar>
+                    </TopBar>
+                </ext:GridPanel>
+            </Items>
+        </ext:Viewport>
+        <ext:Window Hidden="true" runat="Server" Width="336" Height="180" ID="Windows" Layout="FitLayout">
+            <Items>
+                <ext:FormPanel BaseCls="background:transeparent" ButtonAlign="Right" Border="false" ID="FPCMB" runat="Server" MarginSpec="10 0 10 0" Layout="ColumnLayout">
+                    <Defaults>
+                        <ext:Parameter Name="AllowBlank" Value="false" Mode="Raw" />
+                        <ext:Parameter Name="MsgTarget" Value="side" />
+                    </Defaults>
+                    <Items>
+                        <%--<ext:ComboBox ID="cmballocation" runat="Server" EmptyText="请选择">
 							<Items>
 								<ext:ListItem Text="财政拨款"></ext:ListItem>
 								<ext:ListItem Text="其他资金"></ext:ListItem>
@@ -217,56 +270,56 @@
 								<ext:FieldTrigger Icon="Clear" HideTrigger="true" />
 							</Triggers>
 						</ext:ComboBox>--%>
-						<%--  <ext:TextField ID="TFshow" runat="server" Enabled="false" EmptyText="请选择">
+                        <%--  <ext:TextField ID="TFshow" runat="server" Enabled="false" EmptyText="请选择">
 							<Listeners>
 								<Focus Handler="if (#{cmballocation}.disable){#{TFshow}.hide();#{gridselect}.show();}"></Focus>
 							</Listeners>
 						</ext:TextField>--%>
-						<ext:GridPanel ColumnLines="true" runat="Server" ID="gridselect" Width="240" Height="130" MarginSpec="0 10 0 10">
-							<Store>
-								<ext:Store runat="Server" ID="StoreSelectIncome" >  
-									<Model>
-										<ext:Model ID="Model2" runat="server" IDProperty="PIID">
-											<Fields>
-												<ext:ModelField Name="PIID" Type="int"  ServerMapping="PIID"/>
-												<ext:ModelField Name="PIEcoSubName" Type="String"  ServerMapping="PIEcoSubName"/>
-												<ext:ModelField Name="ISSign" Type="Int"  ServerMapping="ISSign" ></ext:ModelField>
-											</Fields>
-										</ext:Model>
-									</Model>
-								  <%--  <Listeners>
+                        <ext:GridPanel ColumnLines="true" runat="Server" ID="gridselect" Width="240" Height="130" MarginSpec="0 10 0 10">
+                            <Store>
+                                <ext:Store runat="Server" ID="StoreSelectIncome">
+                                    <Model>
+                                        <ext:Model ID="Model2" runat="server" IDProperty="PIID">
+                                            <Fields>
+                                                <ext:ModelField Name="PIID" Type="int" ServerMapping="PIID" />
+                                                <ext:ModelField Name="PIEcoSubName" Type="String" ServerMapping="PIEcoSubName" />
+                                                <ext:ModelField Name="ISSign" Type="Int" ServerMapping="ISSign"></ext:ModelField>
+                                            </Fields>
+                                        </ext:Model>
+                                    </Model>
+                                    <%--  <Listeners>
 										<Load Handler="#{cmballocation}.setDisabled(true);" />
 									</Listeners>--%>
-								</ext:Store>
-							</Store>
-							<ColumnModel ID="ColumnModel2" runat="server">
-								<Columns>
-									<ext:Column ID="Column5" Sortable="false" runat="server" Text="经济科目" DataIndex="PIEcoSubName">
-									</ext:Column>
-									<ext:ComponentColumn ID="ComponentColumn1"
-										Sortable="false"
-										DataIndex="ISSign"
-										runat="server"　
-										Editor="true"
-										Text="是否显示下级">
-										<Component>
-											<ext:ComboBox ID="cmbshow" runat="server">
-												<Items>
-													<ext:ListItem Text="是" Value="1" Mode="Raw" />
-													<ext:ListItem Text="否" Value="0" Mode="Raw" />
-												</Items> 
-											</ext:ComboBox>
-										</Component>
-									</ext:ComponentColumn>
-								</Columns>
+                                </ext:Store>
+                            </Store>
+                            <ColumnModel ID="ColumnModel2" runat="server">
+                                <Columns>
+                                    <ext:Column ID="Column5" Sortable="false" runat="server" Text="经济科目" DataIndex="PIEcoSubName">
+                                    </ext:Column>
+                                    <ext:ComponentColumn ID="ComponentColumn1"
+                                        Sortable="false"
+                                        DataIndex="ISSign"
+                                        runat="server"
+                                        Editor="true"
+                                        Text="是否显示下级">
+                                        <Component>
+                                            <ext:ComboBox ID="cmbshow" runat="server">
+                                                <Items>
+                                                    <ext:ListItem Text="是" Value="1" Mode="Raw" />
+                                                    <ext:ListItem Text="否" Value="0" Mode="Raw" />
+                                                </Items>
+                                            </ext:ComboBox>
+                                        </Component>
+                                    </ext:ComponentColumn>
+                                </Columns>
 
-							</ColumnModel>
-							<%-- <Loader runat="server"><LoadMask ShowMask="false"></LoadMask></Loader>--%>
-							<SelectionModel>
-								<ext:CheckboxSelectionModel ID="CheckboxSelectionModel1" runat="server" Mode="Multi" />
-							</SelectionModel>
-						</ext:GridPanel>
-						<%--                            <ListConfig Width="150" Height="300" ItemSelector=".x-boundlist-item">
+                            </ColumnModel>
+                            <%-- <Loader runat="server"><LoadMask ShowMask="false"></LoadMask></Loader>--%>
+                            <SelectionModel>
+                                <ext:CheckboxSelectionModel ID="CheckboxSelectionModel1" runat="server" Mode="Multi" />
+                            </SelectionModel>
+                        </ext:GridPanel>
+                        <%--                            <ListConfig Width="150" Height="300" ItemSelector=".x-boundlist-item">
 								<Tpl ID="Tpl1" runat="server">
 									<Html>
 										<tpl for=".">
@@ -288,7 +341,7 @@
 									</Html>
 								</Tpl>
 							</ListConfig>--%>
-						<%-- <ext:Label Text="分配一级科目: " runat="server" />
+                        <%-- <ext:Label Text="分配一级科目: " runat="server" />
 						<ext:ComboBox ID="cmbsign" Disabled="true" runat="Server" Width="40" MultiSelect="true" MarginSpec="0 10 0 0" EmptyText="请选择">
 							<Items>
 								<ext:ListItem Text="是" Value="0"></ext:ListItem>
@@ -304,29 +357,29 @@
 								<Select Handler="this.getTrigger(0).show();" />
 							</Listeners>
 						</ext:ComboBox>--%>
-						<ext:Button runat="Server" ID="btnreset" Text="重选">
-							<Listeners>
-								<Click Handler="#{cmballocation}.setDisabled(false);#{cmballocation}.clearValue();#{cmbselect}.clearValue();#{cmbpayincome}.clearValue();"></Click>
-							</Listeners>
-						</ext:Button>
-						<ext:Button runat="Server" ID="btnDivde" Text="分配" OnDirectClick="btnDivde_DirectClick"></ext:Button>
-						<ext:Button runat="Server" Text="保存">
-							<Listeners>
-								<Click Handler="Selector.add();" />
-							</Listeners>
-						</ext:Button>
-						<ext:Button runat="Server" ID="btnsave" Text="提交" Hidden="true" OnDirectClick="btnsave_DirectClick">
-						</ext:Button>
-					</Items>
-					<Listeners>
-						<ValidityChange Handler="#{btnDivde}.setDisabled(!valid);" />
-					</Listeners>
-				</ext:FormPanel>
-			</Items>
-		</ext:Window>
+                        <ext:Button runat="Server" ID="btnreset" Text="重选">
+                            <Listeners>
+                                <Click Handler="#{cmballocation}.setDisabled(false);#{cmballocation}.clearValue();#{cmbselect}.clearValue();#{cmbpayincome}.clearValue();"></Click>
+                            </Listeners>
+                        </ext:Button>
+                        <ext:Button runat="Server" ID="btnDivde" Text="分配" OnDirectClick="btnDivde_DirectClick"></ext:Button>
+                        <ext:Button runat="Server" Text="保存">
+                            <Listeners>
+                                <Click Handler="Selector.add();" />
+                            </Listeners>
+                        </ext:Button>
+                        <ext:Button runat="Server" ID="btnsave" Text="提交" Hidden="true" OnDirectClick="btnsave_DirectClick">
+                        </ext:Button>
+                    </Items>
+                    <Listeners>
+                        <ValidityChange Handler="#{btnDivde}.setDisabled(!valid);" />
+                    </Listeners>
+                </ext:FormPanel>
+            </Items>
+        </ext:Window>
 
 
-		<%-- <ext:Window ID="WinAdd" runat="server"
+        <%-- <ext:Window ID="WinAdd" runat="server"
 			Title="分配"
 			Width="460"
 			Height="295"
@@ -369,7 +422,7 @@
 			</Items>
 		</ext:Window>--%>
 
-		<%-- <ext:Window ID="WinAdd" runat="server" Hidden="true" Height="500" Width="400"
+        <%-- <ext:Window ID="WinAdd" runat="server" Hidden="true" Height="500" Width="400"
 			Title="预算分配" Layout="FitLayout">
 			<Items> 
 				<ext:TreePanel
@@ -431,7 +484,7 @@
 				</ext:TreePanel>
 			</Items>
 		</ext:Window>--%>
-		<%-- <ext:Window ID="Window1" runat="server"
+        <%-- <ext:Window ID="Window1" runat="server"
 			Title="添加"
 			Width="300"
 			Height="210"
@@ -482,7 +535,7 @@
 
 					<Items>
 						<%--<ext:Button ID="btnSure" runat="server" Text="确定" OnDirectClick="btnSure_DirectClick" Width="50" Height="24"></ext:Button>--%>
-		<%--<ext:Button ID="btnSure" runat="server" Text="确定" Width="50" Height="24">
+        <%--<ext:Button ID="btnSure" runat="server" Text="确定" Width="50" Height="24">
 			<Listeners>
 				<Click Handler="
 												if (!#{tfMon}.validate() && !#{suppMon}.validate()) {
@@ -502,7 +555,7 @@
 		<ext:Hidden ID="supp" runat="server"></ext:Hidden>
 		</Items>
 		</ext:Window> --%>
-	</form>
+    </form>
 </body>
 </html>
 

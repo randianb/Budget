@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2014/11/9 15:51:45
+// Auto generated at: 	2015/3/4 16:05:10
 //============================================================
 
 using System;

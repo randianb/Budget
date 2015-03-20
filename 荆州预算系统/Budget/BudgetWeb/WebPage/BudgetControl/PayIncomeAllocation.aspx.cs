@@ -1042,7 +1042,7 @@ public partial class WebPage_BudgetControl_PayIncomeAllocation : BudgetBasePage
             }
         }
         HidBind();
-        TPPayIncome.Listeners.AddScript("GetTotal();");
+       // TPPayIncome.Listeners.AddScript("GetTotal();");
     }
     protected void GetBack_DirectClick(object sender, DirectEventArgs e)
     {

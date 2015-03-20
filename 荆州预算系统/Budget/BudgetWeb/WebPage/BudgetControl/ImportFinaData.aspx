@@ -65,17 +65,20 @@
                                  <ext:RadioGroup runat="server" Layout="ColumnLayout" PaddingSpec="6 0 0 0"> 
                                         <Listeners><Change  Fn="getcheck"></Change></Listeners>
                                                 <Items>
-                                                    <ext:Radio ID="Radio1" LabelWidth="60"  runat="server" FieldLabel="输入预算" Checked="true"></ext:Radio>
-                                                    <ext:Radio ID="Radio2" LabelWidth="70" runat="server" FieldLabel="表格导入预算" ></ext:Radio>
-                                                    </Items>
-                                 </ext:RadioGroup> 
-                                <ext:Container ID="CTMon" runat="server" PaddingSpec="6 0 0 20" Width="150"  Hidden="True" Height="24">
+                                                    <ext:Radio ID="Radio1" LabelWidth="60"  runat="server" FieldLabel="输入预算" ></ext:Radio>
+                                                    <ext:TextField runat="server"  ID="TFMon"    Height="24" PaddingSpec="5 0 0 25"  LabelWidth="100" ></ext:TextField>
+                                                    
+                                                    <ext:Radio ID="Radio2" LabelWidth="80" runat="server" FieldLabel="表格导入预算" Checked="true" ></ext:Radio>
+                                                    <ext:Container ID="CTMon" runat="server" PaddingSpec="6 0 0 20" Width="150" Hidden="true"  Height="24">
                                     <Items>
                                         <ext:FileUploadField ID="FUFEXC" runat="server" ButtonText="浏览···">
                                         </ext:FileUploadField>
                                     </Items>
                                 </ext:Container>
-                                 <ext:TextField runat="server" FieldLabel="预算金额设置" ID="TFMon"  Hidden="True"  Height="24" PaddingSpec="6 0 0 25"  LabelWidth="100" ></ext:TextField>
+                                                    </Items>
+                                 </ext:RadioGroup> 
+                                
+                                 
                                 <%-- <ext:TextField ID="TextField5" runat="server" Text="未选择文件" Height="24" PaddingSpec="6 0 0 20">
                                 </ext:TextField>--%>
                                 <ext:TextField runat="server" FieldLabel="年度" ID="txtYear1" ReadOnly="true" Height="24" PaddingSpec="6 0 0 25" LabelWidth="35" ></ext:TextField>

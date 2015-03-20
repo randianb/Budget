@@ -422,3 +422,11 @@ E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common
 E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
 E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
 E:\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.dll
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.pdb
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.dll
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\ChineseConverter.dll
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.pdb
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
+E:\阿呆\Documents\GitHub\Budget\嘉鱼预算分析\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb

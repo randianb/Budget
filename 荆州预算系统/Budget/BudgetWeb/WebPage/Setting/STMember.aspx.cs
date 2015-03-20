@@ -281,17 +281,29 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
             txtRem.Text = user.UserRem;
             UserID.Text = user.UserID.ToString();
             string limit = user.UserLim;
-            if (user.IsVIP==1)
+            if ( common.IntSafeConvert(user.IsVIP.ToString().Substring(0,1))==1)
             {
                 Radio7.Checked = true;
             }
-            else if (user.IsVIP == 0)
+            else if (common.IntSafeConvert(user.IsVIP.ToString().Substring(0,1)) == 0)
             {
                 Radio8.Checked = true;
             }
-            else  
+            //else  
+            //{
+            //    Radio9.Checked = true;
+            //}
+            if (user.ApplyRem.Length>0&&user.ApplyRem.Substring(0, 1) == "1")
             {
                 Radio9.Checked = true;
+            }
+            if (user.ApplyRem.Length>0&&user.ApplyRem.Substring(1, 1) == "1")
+            {
+                Radio10.Checked = true;
+            }
+            if (user.ApplyRem.Length>0&&user.ApplyRem.Substring(2, 1) == "1")
+            {
+                Radio11.Checked = true;
             }
             if (limit.Length >= 5)
             {
@@ -395,6 +407,7 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
         user.UserRem = txtRem.Text.Replace(",", string.Empty).Replace("，", string.Empty);
         string limit = string.Empty;
         int isvip = 0;
+        string applyrem ="";
          if (Radio1.Checked == true)
         {
             limit = "100000";
@@ -435,10 +448,17 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
         {
             isvip = 0;
         }
-        if (Radio9.Checked == true)
-        {
-            isvip = 2;
-        }
+        //if (Radio9.Checked == true)
+        //{
+        //    applyrem = "000";
+        //}
+        string applyrem1="";
+        string applyrem2="";
+        string applyrem3="";
+        applyrem1 = Radio9.Checked == true ? "1" : "0";
+        applyrem2 = Radio10.Checked == true ? "1" : "0";
+        applyrem3 = Radio11.Checked == true ? "1" : "0";
+        applyrem = applyrem1 + applyrem2 + applyrem3;
         user.UserLim = limit;
         string depname = ComboBox1.Text; //ComboBox1.RawValue.ToString();
         DataTable dt = BG_DepartmentLogic.GetDepidByName(depname);
@@ -446,7 +466,8 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
         {
             user.DepID = StrToInt(dt.Rows[0]["DepID"].ToString());
         }
-        user.IsVIP = isvip; 
+        user.IsVIP = isvip;
+        user.ApplyRem = applyrem;
        // faUser.UserPurStr = "000000";
         if (BG_UserManager.ModifyBG_User(user) )
         {
@@ -555,11 +576,17 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
         {
             isvip = 0;
         }
-        if (Radio9.Checked == true)
-        {
-            isvip = 2;
-        }
-
+        //if (Radio9.Checked == true)
+        //{
+        //    isvip = 2;
+        //}
+        string applyrem = "";
+        string applyrem1 = "";
+        string applyrem2 = "";
+        string applyrem3 = "";
+        applyrem1 = Radio9.Checked == true ? "1" : "0";
+        applyrem2 = Radio10.Checked == true ? "1" : "0";
+        applyrem3 = Radio11.Checked == true ? "1" : "0";
 
         user.UserLim = limit;
         //user.UserSta = StrToInt(cbbSta.Text);
@@ -575,8 +602,8 @@ public partial class WebPage_Setting_STMember : BudgetBasePage
         user.UserPwd = "12345";
         int depid = common.IntSafeConvert(BG_DepartmentLogic.GetBG_DepartmentByName((string)Session["depname"]).DepID);
         user.DepID = depid;
-        user.IsVIP = isvip; 
-       
+        user.IsVIP = isvip;
+        user.ApplyRem = applyrem;
         if (BG_UserManager.AddBG_User(user).UserID > 0  )
         {
             Node node = new Node();

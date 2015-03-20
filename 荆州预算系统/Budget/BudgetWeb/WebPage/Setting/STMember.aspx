@@ -181,7 +181,26 @@
                                         <Items>
                                             <ext:Radio ID="Radio7" runat="server" FieldLabel="是超级用户" Checked="False"></ext:Radio>
                                             <ext:Radio ID="Radio8" runat="server" FieldLabel="不是超级用户" Checked="True"></ext:Radio>
-                                            <ext:Radio ID="Radio9" runat="server" FieldLabel="局长基金" Checked="False"></ext:Radio>
+                                            <%--<ext:Radio ID="Radio9" runat="server" FieldLabel="局长基金" Checked="False"></ext:Radio>--%>
+                                        </Items>
+                                    </ext:RadioGroup>
+                                               </Items> </ext:FieldSet>
+                                     
+                                       <ext:FieldSet ID="FieldSet3" 
+                                                  runat="server" MarginSpec="20 0 0 50"
+                                                  Title="报销单权限"
+                                                  Collapsible="true" Width="220"
+                                                  DefaultAnchor="100%">
+                                           <Items>
+                                    <ext:RadioGroup Layout="AnchorLayout" ID="RadioGroup2"   runat="server"   >
+<%--                                           <Defaults>--%>
+<%--                                        <ext:Parameter Name="labelWidth" Value="20" Mode="Raw" />--%>
+<%--                                                <ext:Parameter Name="Width" Value="20" Mode="Raw" />--%>
+<%--                                    </Defaults>--%>
+                                        <Items>
+                                            <ext:Radio ID="Radio9" runat="server" FieldLabel="费用报销单" Checked="True"></ext:Radio>
+                                            <ext:Radio ID="Radio10" runat="server" FieldLabel="科室业务费报销单" Checked="False"></ext:Radio>
+                                            <ext:Radio ID="Radio11" runat="server" FieldLabel="局长基金" Checked="False"></ext:Radio>
                                         </Items>
                                     </ext:RadioGroup>
                                                </Items> </ext:FieldSet>

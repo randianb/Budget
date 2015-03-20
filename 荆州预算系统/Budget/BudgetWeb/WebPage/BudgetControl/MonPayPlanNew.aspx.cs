@@ -973,11 +973,23 @@ public partial class WebPage_BudgetControl_MonPayPlanNew : BudgetBasePage
 			}
 			newValue = ParseUtil.ToDecimal(rc.Value<float>().ToString(), 0);
 			oldValue = ParseUtil.ToDecimal(rc.OldValue<float>().ToString(), 0);
-			if (newValue==0)
-			{
-				//X.Msg.Alert("申请月度用款计划", "科目：" + PIEcoSubName + "请填写金额不为0，请调整经费").Show();
-				return;     
-			}
+            //if (newValue==0)
+            //{
+            //    BG_MonPayPlan mppalert = new BG_MonPayPlan();
+            //    mppalert = BG_MonPayPlanManager.GetBG_MonPayPlanByCPID(CPID);
+            //    mppalert.MPFundingAdd = newValue / 10000;
+            //    mppalert.MPFunding = mppalert.MPFunding + (newValue) / 10000 - oldValue / 10000;
+            //    mppalert.MPFundingAddTimes = common.IntSafeConvert(cmbpici.SelectedItem.Value);
+            //    BG_MonPayPlanManager.ModifyBG_MonPayPlan(mppalert);
+            //    string message = "<b>科目:</b> {0}<br /><b>原经费:</b> {1}<br /><b>更改经费:</b> {2}";
+            //    X.Msg.Notify(new NotificationConfig()
+            //    {
+            //        Title = "申请月度用款计划",
+            //        Html = string.Format(message, PIEcoSubName, oldValue, newValue),
+            //        Width = 250
+            //    }).Show();
+            //    return;
+            //}
 			balance = Mon - MPFundingAdd;
 			if (dt.Rows.Count > 0)
 			{
@@ -1394,7 +1406,7 @@ public partial class WebPage_BudgetControl_MonPayPlanNew : BudgetBasePage
 
 	private void getpici()
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 20; i++)
 		{
 			cmbpici.Items.Add(new Ext.Net.ListItem((i + 1).ToString(), (i + 1).ToString()));
 		}

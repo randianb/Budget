@@ -494,3 +494,11 @@ E:\预算\Budget2014-12-24\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.p
 E:\预算\Budget2014-12-24\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
 E:\预算\Budget2014-12-24\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
 E:\预算\Budget2014-12-24\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.dll
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\bin\Debug\Budget.DataAccess.pdb
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.dll
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\bin\Debug\ChineseConverter.dll
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\bin\Debug\BudgetSys.Common.pdb
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.csprojResolveAssemblyReference.cache
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.dll
+E:\阿呆\Documents\GitHub\Budget\荆州预算系统\Budget\Budget.DataAccess\obj\Debug\Budget.DataAccess.pdb

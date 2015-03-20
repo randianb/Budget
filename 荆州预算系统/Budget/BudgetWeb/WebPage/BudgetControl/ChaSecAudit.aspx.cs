@@ -50,9 +50,32 @@ public partial class BudgetPage_mainPages_ChaSecAudit : BudgetBasePage
                 Month = mydate.Month;
                 AuditStoreBind1(depid, Year, Month, pici);
             }
-          
-        } 
-       
+
+            DataTable dt = BG_SelMonPayPlanLogic.GetMonPayPlanTotalAudit(1);
+            GTPdbsxStore.DataSource = dt;
+            GTPdbsxStore.DataBind();
+        }
+
+    }
+    [DirectMethod]
+    public void DB(string depid, string time, string pici)
+    {
+        string str2 = "ChaSecAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        string url = string.Format(str2, depid, time, pici);
+        Response.Redirect(url, true); 
+        //        string YearMonth = Convert.ToDateTime(time).ToString("yyyy-MM"); 
+        //if (hidsta.Value.ToString() == "0")
+        //{
+        //    string str1 = "FinAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        //    string url = string.Format(str1, depid, time, pici);
+        //    Response.Redirect(url, true);
+        //}
+        //if (hidsta.Value.ToString() == "1")
+        //{
+        //    string str2 = "ChaSecAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        //    string url = string.Format(str2, depid, time, pici);
+        //    Response.Redirect(url, true);
+        //}
     }
     private void AuditStoreBind1(int depid, int year, int month, int pici)
     {
@@ -283,7 +306,8 @@ public partial class BudgetPage_mainPages_ChaSecAudit : BudgetBasePage
         int year = Convert.ToInt32(cmbyear.SelectedItem.Value);
         int month = Convert.ToInt32(cmbmonth.SelectedItem.Value);
         int depid = common.IntSafeConvert(cmbdept.SelectedItem.Value.ToString());
-        string YearMonth = year.ToString() + "-" + month.ToString();
+        string Month = month > 9 ? month.ToString() : "0" + month.ToString();
+        string YearMonth = year.ToString() + "-" + Month;
         DataTable dt = BG_ChaSecAuditLogic.GetChaSecAudit(depid, year, month,common.IntSafeConvert(cmbpici.SelectedItem.Text));
         if (dt.Rows.Count <= 0)
         {
@@ -324,11 +348,13 @@ public partial class BudgetPage_mainPages_ChaSecAudit : BudgetBasePage
         {
             X.Msg.Alert("提示", "请先选择年度").Show();
             return;
-        } string YearMonth = year.ToString() + "-" + month.ToString();
+        }
+        string Month = month > 9 ? month.ToString() : "0" + month.ToString();
+        string YearMonth = year.ToString() + "-" + Month;
         int depid = common.IntSafeConvert(cmbdept.SelectedItem.Value.ToString());
         DataTable dt = BG_ChaSecAuditLogic.GetChaSecAudit(depid, year, month, common.IntSafeConvert(cmbpici.SelectedItem.Text));
         string months = month < 10 ? 0 + month.ToString() : month.ToString();
-        string yearMon = year + "-" + months;
+       // string yearMon = year + "-" + months;
         if (dt.Rows.Count <= 0)
         {
             X.Msg.Alert("提示", "没有可选数据").Show(); 
@@ -357,7 +383,7 @@ public partial class BudgetPage_mainPages_ChaSecAudit : BudgetBasePage
                 }
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    int CashierID = BG_CashierLogic.GetCashierIDAudit_RemarkByPiid(depid, yearMon,
+                    int CashierID = BG_CashierLogic.GetCashierIDAudit_RemarkByPiid(depid, YearMonth,
                         common.IntSafeConvert(dt.Rows[i]["PIID"])); 
                     if (CashierID > 0)
                     {

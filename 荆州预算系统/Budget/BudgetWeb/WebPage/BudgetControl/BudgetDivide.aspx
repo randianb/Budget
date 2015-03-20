@@ -11,6 +11,9 @@
 <body>
     <script src="../../js/jquery-1.7.2.min.js"></script>
     <script>
+        var rawclick = function (a, b, c) {
+            App.direct.GetRowexpand(b.data.piidflag);
+        }
         function changeStyle() {
             if ($("#gridview-1009 table tr").length > 0) {
 
@@ -29,13 +32,13 @@
         <ext:Viewport ID="ViewPort1" runat="server" Layout="FitLayout">
             <Items>
                 <ext:GridPanel ColumnLines="true" ID="gridpanel1" runat="server" AutoHeight="false" Layout="FitLayout" MaskOnDisable="false" AutoScroll="true"
-                    Title="测算分配情况">
+                    Title="预算分配情况">
 
                     <Store> 
                         <ext:Store ID="DivideStore" runat="server" PageSize="17">
                             <Model>
                                 <ext:Model ID="Model1" runat="server">
-                                    <Fields>
+                                    <Fields>  <ext:ModelField Name="piidflag" Type="int" />
                                         <ext:ModelField Name="depname" Type="string" />
                                         <ext:ModelField Name="name" Type="string" />
                                         <ext:ModelField Name="mon" Type="float" />
@@ -97,11 +100,11 @@
                                         <ext:Label runat="server" ID="txtshow" MarginSpec="0 0 0 5"></ext:Label>
                                     </Items>
                                 </ext:Panel>
-                                <ext:Panel runat="server" Title="测算分配情况"></ext:Panel> 
+                                <ext:Panel runat="server" Title="预算分配情况"></ext:Panel> 
                             </Items>
                         </ext:Toolbar>
                     </TopBar>　
-                    <Listeners></Listeners>
+                    <Listeners><ItemClick  Fn="rawclick"></ItemClick></Listeners>
                 </ext:GridPanel>
 
             </Items>

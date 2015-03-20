@@ -25,7 +25,7 @@ public partial class BudgetPage_mainPages_SelMonPayPlan : BudgetBasePage
     private void getpici()
     {
         cmbpici.Items.Add(new Ext.Net.ListItem("全部", "0"));
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             cmbpici.Items.Add(new Ext.Net.ListItem((i+1).ToString(), (i+1).ToString()));
         }

@@ -50,11 +50,35 @@ public partial class BudgetPage_mainPages_FinAudit : BudgetBasePage
                 Year = mydate.Year;
                 Month = mydate.Month;
                 AuditStoreBind1(depid, Year, Month, pici);
+
+              
             }
+            DataTable dt = BG_SelMonPayPlanLogic.GetMonPayPlanTotalAudit(0);
+            GTPdbsxStore.DataSource = dt;
+            GTPdbsxStore.DataBind();
         }
 
     }
-
+    [DirectMethod]
+    public void DB(string depid, string time, string pici)
+    {
+        string str1 = "FinAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        string url = string.Format(str1, depid, time, pici);
+        Response.Redirect(url, true); 
+        //        string YearMonth = Convert.ToDateTime(time).ToString("yyyy-MM"); 
+        //if (hidsta.Value.ToString() == "0")
+        //{
+        //    string str1 = "FinAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        //    string url = string.Format(str1, depid, time, pici);
+        //    Response.Redirect(url, true);
+        //}
+        //if (hidsta.Value.ToString() == "1")
+        //{
+        //    string str2 = "ChaSecAudit.aspx?depid={0}&&time={1}&&pici={2}";
+        //    string url = string.Format(str2, depid, time, pici);
+        //    Response.Redirect(url, true);
+        //}
+    }
     private void AuditStoreBind1(int depid, int year, int month, int pici)
     {
         cmbdept.SelectedItem.Value = depid.ToString();
@@ -276,7 +300,8 @@ public partial class BudgetPage_mainPages_FinAudit : BudgetBasePage
         int year = Convert.ToInt32(cmbyear.SelectedItem.Value);
         int month = Convert.ToInt32(cmbmonth.SelectedItem.Value);
         int depid = common.IntSafeConvert(cmbdept.SelectedItem.Value.ToString());
-        string YearMonth = year.ToString() + "-" + month.ToString();
+        string Month= month> 9 ? month.ToString() :"0" + month.ToString();
+        string YearMonth = year.ToString() + "-" + Month;
         DataTable dt = BG_FinAuditLogic.GetFinAudit(depid, year, month, common.IntSafeConvert(cmbpici.SelectedItem.Text));
         if (dt.Rows.Count <= 0)
         {

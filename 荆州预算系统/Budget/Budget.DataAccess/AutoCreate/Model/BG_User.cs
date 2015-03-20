@@ -2,7 +2,7 @@
 // Producnt name:		Auto Generate
 // Version: 			1.0
 // Coded by:			Wu Di (wd_kk@qq.com)
-// Auto generated at: 	2014/11/9 15:51:43
+// Auto generated at: 	2015/3/4 16:05:09
 //============================================================
 
 using System;
@@ -28,6 +28,7 @@ namespace BudgetWeb.Model
 		private int isVIP;
 		private string userDescription = String.Empty;
 		private int isLogin;
+		private string applyRem = String.Empty;
 
 		
 		public BG_User() { }
@@ -117,6 +118,13 @@ namespace BudgetWeb.Model
 		{
 			get { return this.isLogin; }
 			set { this.isLogin = value; }
+		}		
+		
+		
+		public string ApplyRem
+		{
+			get { return this.applyRem; }
+			set { this.applyRem = value; }
 		}		
 		
 	}

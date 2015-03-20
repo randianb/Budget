@@ -52,18 +52,42 @@
             } else {
                 p4 = ["0", "0"];
             } 
-            if ($("#HidtotalMon").val() != "") { 
-                $("#ext-gen1131  .x-grid-cell-Column5  div ").html(p1[0]); $("#ext-gen1131  .x-grid-cell-last  div ").html(p1[1]);
+            if ($("#HidtotalMon").val() != "" || $("#ext-gen1131  .x-grid-cell-Column5  div ").html().replace("&nbsp;","").length > 1 || $("#ext-gen1131  .x-grid-cell-last  div ").html().replace("&nbsp;","").length > 1) {
+                if ($("#HidtotalMon").val() == "") {
+
+                }
+                else {
+                    $("#ext-gen1131  .x-grid-cell-Column5  div ").html(p1[0]); $("#ext-gen1131  .x-grid-cell-last  div ").html(p1[1]);
+                }
             }
-            if ($("#HidtotalMon1").val() != "") { 
-                $("#ext-gen1132  .x-grid-cell-Column5  div ").html(p2[0]); $("#ext-gen1132  .x-grid-cell-last div ").html(p2[1]);
+            else { $("#ext-gen1131  .x-grid-cell-Column5  div ").html("0.00"); $("#ext-gen1131  .x-grid-cell-last  div ").html("0.00"); }
+            if ($("#HidtotalMon1").val() != "" || $("#ext-gen1132  .x-grid-cell-Column5  div ").html().replace("&nbsp;","").length > 1 || $("#ext-gen1132  .x-grid-cell-last  div ").html().replace("&nbsp;","").length > 1) {
+                if ($("#HidtotalMon1").val() == "") {
+
+                }
+                else {
+                    $("#ext-gen1132  .x-grid-cell-Column5  div ").html(p2[0]); $("#ext-gen1132  .x-grid-cell-last div ").html(p2[1]);
+                }
             }
-            if ($("#HidtotalMon2").val() != "") { 
-                $("#ext-gen1133  .x-grid-cell-Column5  div ").html(p3[0]); $("#ext-gen1133  .x-grid-cell-last  div ").html(p3[1]);
+            else { $("#ext-gen1132  .x-grid-cell-Column5  div ").html("0.00"); $("#ext-gen1132  .x-grid-cell-last  div ").html("0.00"); }
+            if ($("#HidtotalMon2").val() != "" || $("#ext-gen1133  .x-grid-cell-Column5  div ").html().replace("&nbsp;","").length > 1 || $("#ext-gen1133  .x-grid-cell-last  div ").html().replace("&nbsp;","").length > 1) {
+                if ($("#HidtotalMon2").val() == "") {
+
+                }
+                else {
+                    $("#ext-gen1133  .x-grid-cell-Column5  div ").html(p3[0]); $("#ext-gen1133  .x-grid-cell-last  div ").html(p3[1]);
+                }
             }
-            if ($("#HidtotalMon3").val() != "") { 
-                $("#ext-gen1134  .x-grid-cell-Column5  div ").html(p4[0]); $("#ext-gen1134  .x-grid-cell-last  div ").html(p4[1]);
-            } 
+            else { $("#ext-gen1133  .x-grid-cell-Column5  div ").html("0.00"); $("#ext-gen1133  .x-grid-cell-last  div ").html("0.00"); }
+            if ($("#HidtotalMon3").val() != "" || $("#ext-gen1134  .x-grid-cell-Column5  div ").html().replace("&nbsp;","").length > 1 || $("#ext-gen1134  .x-grid-cell-last  div ").html().replace("&nbsp;","").length > 1) {
+                if ($("#HidtotalMon3").val() == "") {
+
+                }
+                else {
+                    $("#ext-gen1134  .x-grid-cell-Column5  div ").html(p4[0]); $("#ext-gen1134  .x-grid-cell-last  div ").html(p4[1]);
+                }
+            }
+            else { $("#ext-gen1134  .x-grid-cell-Column5  div ").html("0.00"); $("#ext-gen1134  .x-grid-cell-last  div ").html("0.00"); }
 //            $("#ext-gen1134  .x-grid-cell-Column5  div ").html(p1[0]); $("#ext-gen1134  .x-grid-cell-Column6  div ").html(p1[1]);
 //            $("#ext-gen1135  .x-grid-cell-Column5  div ").html(p2[0]); $("#ext-gen1135  .x-grid-cell-Column6  div ").html(p2[1]);
 //            $("#ext-gen1136  .x-grid-cell-Column5  div ").html(p3[0]); $("#ext-gen1136  .x-grid-cell-Column6  div ").html(p3[1]);
@@ -84,6 +108,7 @@
                     }
                 });
             }
+            GetTotal();
         }
 
         var GetSelect = function () {

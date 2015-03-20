@@ -34,21 +34,27 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
             GetYear();
             DtDataBind();
         }
-        Label4.Style.Add("color", "red");
-        Label5.Style.Add("color", "red");
+        YTDProvinceMon.Style.Add("color", "red");
+        SuppMon.Style.Add("color", "red");
+        Deserved.Style.Add("color", "red");
+        ResidualMon.Style.Add("color", "red");
+        BudgetTatol.Style.Add("color", "red");
+        YTDDeserved.Style.Add("color", "red");
+        YTDResidualMon.Style.Add("color", "red");
+        ResidualSuppMon.Style.Add("color", "red");
     }
 
     private void GetYear()
     {
-//        DataTable dt = BG_SysSettingManager.GetAllBG_SysSetting();
-//        if (dt.Rows.Count > 0)
-//        {
-//            for (int i = 0; i < dt.Rows.Count; i++)
-//            {
-//                int a = Convert.ToInt32(dt.Rows.Count) - 1;
-//                HidYear.Value = dt.Rows[a]["DefaultYear"].ToString();
-//            }
-//        }
+        //        DataTable dt = BG_SysSettingManager.GetAllBG_SysSetting();
+        //        if (dt.Rows.Count > 0)
+        //        {
+        //            for (int i = 0; i < dt.Rows.Count; i++)
+        //            {
+        //                int a = Convert.ToInt32(dt.Rows.Count) - 1;
+        //                HidYear.Value = dt.Rows[a]["DefaultYear"].ToString();
+        //            }
+        //        }
         HidYear.Value = CurrentYear;
         Label6.Text = HidYear.Value.ToString();
     }
@@ -119,9 +125,12 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
         {
             premon = ParToDecimal.ParToDel(dtpre.Rows[0]["PreMon"].ToString());
         }
-        Label4.Text = (txt + premon).ToString("f2");
-        //tatal.Value = txt.ToString();
-        //Label4.Text = txt.ToString();
+        //YTDProvinceMon.Text = (txt1 + premon).ToString("f2");
+        ////tatal.Value = txt.ToString();
+        ////YTDProvinceMon.Text = txt.ToString();
+        //Deserved.Text = (txt1 - txt).ToString("f2");
+        //ResidualMon.Text = (txt + premon).ToString("f2");
+
         baa.Value = txt.ToString();
         DataTable dt = BG_DepartmentLogic.GetAllBG_DepartmentMon(year, DepID);
         DataTable dt6 = BG_SupplementaryLogic.GetBG_SupplementaryByyear(year);
@@ -136,14 +145,23 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
 
         if (dt6.Rows.Count <= 0)
         {
-            Label5.Text = "0.00";
+            ResidualSuppMon.Text = "0.00";
         }
         else
         {
-            Label5.Text = (ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString()) - sutxt).ToString("f2");
+            ResidualSuppMon.Text = (ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString()) - sutxt).ToString("f2");
         }
-        supp.Value = Convert.ToDecimal(Label5.Text);
+        supp.Value = Convert.ToDecimal(ResidualSuppMon.Text);
 
+        YTDProvinceMon.Text = (txt1 + premon).ToString("f2");
+        //tatal.Value = txt.ToString();
+        //YTDProvinceMon.Text = txt.ToString();
+        Deserved.Text = (txt1 - txt).ToString("f2");
+        ResidualMon.Text = (txt + premon).ToString("f2");
+        SuppMon.Text = ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString()).ToString("f2");
+        BudgetTatol.Text = (txt1 + premon + ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString())).ToString("f2");
+        YTDDeserved.Text = ((txt1 - txt) + ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString()) - ParToDecimal.ParToDel(ResidualSuppMon.Text)).ToString("f2");
+        YTDResidualMon.Text = (txt + premon + ParToDecimal.ParToDel(dt6.Rows[0]["SuppMon"].ToString())).ToString("f2");
         dt.Columns.Add("DepNum");
         if (dt.Rows.Count > 0)
         {
@@ -339,7 +357,7 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
 
     private void AllSetting()
     {
-        var depID = (string) Session["ID"];
+        var depID = (string)Session["ID"];
         string tmpStr = "";
         //string cmball = cmballocation.Text;
         //string cmbpay = cmbpayincome.Text;
@@ -430,7 +448,7 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
             root = xmldoc.DocumentElement;
 
             String strTemp = "/members/Person[uid='" + "设置" + "']";
-            thePerson = (XmlElement) root.SelectSingleNode(strTemp);
+            thePerson = (XmlElement)root.SelectSingleNode(strTemp);
 
             if (thePerson != null)
             {
@@ -516,7 +534,7 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
         DataTable dt = BG_PayIncomeLogic.GetDtPayIncome();
         for (int i = 0; i < dt.Rows.Count; i++)
         {
-            dt.Rows[i]["ISSign"] = dt.Rows[i]["ISSign"] == DBNull.Value ? 0 : (int) dt.Rows[i]["ISSign"];
+            dt.Rows[i]["ISSign"] = dt.Rows[i]["ISSign"] == DBNull.Value ? 0 : (int)dt.Rows[i]["ISSign"];
         }
         StoreSelectIncome.DataSource = dt;
         StoreSelectIncome.DataBind();
@@ -529,7 +547,7 @@ public partial class WebPage_BudgetControl_BudgetAllocation : BudgetBasePage
         DataTable dt = BG_PayIncomeLogic.GetDtPayIncome(pe, an, 1);
         for (int i = 0; i < dt.Rows.Count; i++)
         {
-            dt.Rows[i]["ISSign"] = dt.Rows[i]["ISSign"] == DBNull.Value ? 0 : (int) dt.Rows[i]["ISSign"];
+            dt.Rows[i]["ISSign"] = dt.Rows[i]["ISSign"] == DBNull.Value ? 0 : (int)dt.Rows[i]["ISSign"];
             dt.Rows[i]["ISSign"] = 0;
         }
         StoreSelectIncome.DataSource = dt;
